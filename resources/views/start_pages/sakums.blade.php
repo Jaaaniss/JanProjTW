@@ -1,26 +1,22 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
+<div style="padding: 50px; border:solid green">
+    <h1 class="flex text-6xl font-bold">
+        Hello world!
+    </h1>
+    <h1 class="text-6xl font-bold">
+        Hello world!2
+    </h1>
+</div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
 
-    <meta name="color-scheme" content="dark light">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>JSneaks</title>
-</head>
+@endsection
 
-<body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="darkmodenavbar">
+        {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light" id="darkmodenavbar">
 
             <div class="picturenav">
                 <a href="/">
@@ -69,11 +65,9 @@
                                     </a>
                                 @endif
 
-                                 {{--  @if (Auth::user()->id != 1)--}}
                                     <a class="dropdown-item" href="/auth/user/user_profile">
                                         {{ __('My profile') }}
                                     </a>
-                                {{--  @endif--}}
 
                                 <a class="dropdown-item" href="/search_size">
                                     {{ __('Search your size') }}
@@ -94,12 +88,12 @@
                 </li>
             </div>
 
-        </nav>
+        </nav> --}}
 
 
-    <img class="imagew" src="{{ asset('/image/wallpaper_jordan.jpg') }}" alt="" width="100%" height="600px">
+        {{-- <img class="imagew" src="{{ asset('/image/wallpaper_jordan.jpg') }}" alt="" width="100%" height="600px"> --}}
 
-    <div class="teksts">
+    {{-- <div class="teksts">
 
         <div class="mainit">
             <img id="imgg" src="{{ asset('/image/LOGO.png') }}" alt="Girl in a jacket" width="100"
@@ -139,9 +133,9 @@
             </div>
         </div>
 
-    </div>
+    </div> --}}
 
-    <div class="converter" id="collapse3" style="display:none">
+    {{-- <div class="converter" id="collapse3" style="display:none">
         <div class="form-group col-sm-4">
 
             <div class="de">
@@ -153,18 +147,11 @@
                     oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <div class="beigaas">
+    {{-- <div class="beigaas">
         <div class="box-1">
             <a id="nulll" href="/start_pages/size_converter" class="btn btnneed btn-one" role="button"><span>Next</span></a>
         </div>
         <a id="dark2" href="#collapse3" class="nav-link" id="toggle">Get converter</a>
-    </div>
-
-    <script src="{{ asset('js/darkmode.js') }}"></script>
-    <script src="{{ asset('js/converter.js') }}"></script>
-
-</body>
-
-</html>
+    </div> --}}
