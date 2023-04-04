@@ -1,0 +1,71 @@
+body {
+    background: linear-gradient(to right, #ffffff, #d1d1d1);
+}
+
+.invert body {
+    background: linear-gradient(to right, #343434, #575757);
+}
+
+.invert #kolor {
+    background: #464646;
+    border: 1px solid #656565;
+}
+
+#kolor {
+    background:#f5f5f5;
+    border-radius: 20px;
+    width: 100%;
+}
+
+
+.invert .form-control {
+    border: 1px solid #656565;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 17%);
+    color: white;
+    background: #575757;
+}
+
+.form-control {
+
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 17%);
+
+}
+
+@media (max-width: 575px){
+    .blade {
+        height: 910px;
+    }}
+
+    @media (min-width: 575px){
+        .blade {
+            height: 910px;
+        }}
+
+
+.invert #editcard {
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#editcard {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.btn_edit_size {
+    line-height: 35px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    max-width: 150px;
+    cursor: pointer;
+  }
+
+  .invert .btn_edit_size {
+    line-height: 35px;
+    height: 50px;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+  }

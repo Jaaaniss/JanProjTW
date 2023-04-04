@@ -1,0 +1,67 @@
+/* body {
+    background: linear-gradient(to right, #ffffff, #d1d1d1);
+}
+
+.invert body {
+    background: linear-gradient(to right, #343434, #575757);
+}
+
+.invert #kolor {
+    background-color: #2e2e2e;
+    border: 1px solid rgba(255, 255, 255, 0.21);
+}
+
+#kolor {
+
+    border-radius: 20px;
+}
+
+
+
+
+.invert #addcard {
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.invert .form-control {
+    border: 1px solid #000000;
+    color: white;
+    background-color: #585858;
+}
+*/
+.invert .card-header {
+
+    border-bottom: 1px solid rgb(147 147 147 / 34%);
+}
+.invert .form-select {
+    border: 1px solid #656565;
+    color: white;
+    background: #575757;
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 17%);
+}
+
+.form-select {
+    box-shadow: 0px 0px 5px 0px rgb(0 0 0 / 17%);
+}
+
+#addcard {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1.5rem !important;
+}
+
+@media (max-width: 575px){
+    .blade {
+        height: 1025px;
+    }}
+
+    @media (min-width: 575px){
+        .blade {
+            height: 910px;
+        }}
