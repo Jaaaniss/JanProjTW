@@ -1,72 +1,73 @@
 @extends('layouts.app')
 @section('content')
 
+<style>
+@media (max-width: 767px){
+    #bladess {
+        padding-top: 250px
+    }}
 
-    <div style="height:100%" class=lielaiss>
-        <div class="container">
-            <div style="width:100%" class="row">
-                <div class="col-lg-10 col-xl-9 mx-auto">
-                    <div id="shadoww" class="card flex-row my-5 border-0 rounded-3 overflow-hidden">
+</style>
 
-                        <div class="card-img-left d-none d-md-flex">
-                            {{-- <video  alt="" width="100%" height="700px" class="imageww" autoplay loop muted>
-                    <source src="{{ asset('/image/video.mp4') }}" type="video/mp4">
-                  </video> --}}
-                            <img class="imageww" src="{{ asset('/image/wallpaper3.png') }}" alt="" width="100%"
-                                height="100%">
-                        </div>
+<div class="w-full h-screen md:flex">
+    <div class="w-full">
+        <img class="object-cover h-full w-full relative overflow-hidden md:flex justify-around items-center hidden"
+            src="{{ asset('/image/wallpaper_jordan.jpg') }}" alt="">
+    </div>
+    <div id="bladess" class="w-full flex justify-center py-10 items-center bg-transparent">
+        <div class="bg-transparent">
+            <h1 class="dark:text-white text-gray-800 font-bold text-2xl mb-1">Login</h1>
+            <p class="dark:text-zinc-300 text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
 
-                        <div id="carder" class="card-body p-4 p-sm-5">
-                            <h2 class=" text-center mb5 fw-light fs5">Login</h2>
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
 
-                                <div class="form-floating mb-3">
-                                    <input name="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" id="Emaill"
-                                        placeholder="email@example.com" required autocomplete="email"
-                                        value="{{ old('email') }}" autofocus>
-
-
-                                </div>
-
-
-
-                                <div class="form-floating mb-3">
-                                    <input name="password" type="password"
-                                        class="form-control  @error('password') is-invalid @enderror" id="Passwordd"
-                                        placeholder="Password" required autocomplete="current_password" autofocus>
-                                </div>
-                                @error('password')
-                                    <span style="position: absolute;" class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                @error('email')
-                                    <span style="position: absolute;" class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                <hr>
-
-                                <div class="d-grid mb-2">
-                                    <button id="vjg2" class="btn2 btn-lg btn-primary btn-login fw-bold text-uppercase"
-                                        type="submit">Login</button>
-                                </div>
-
-                                <hr class="my-4">
-                                <a id="a1" class="d-block text-center mt-2 small" href="/register">New around here?
-                                    Sign up</a>
-
-                            </form>
-                        </div>
-                    </div>
+                <div class="dark:bg-[#4a4a4c] flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                    </svg>
+                    <input name="email" type="email" class="bg-transparent pl-2 outline-none border-none" id="Emaill"
+                        placeholder="email@example.com" required autocomplete="email" value="{{ old('email') }}"
+                        autofocus>
                 </div>
-            </div>
+
+
+
+                <div class="dark:bg-[#4a4a4c] flex items-center border-2 py-2 px-3 rounded-2xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <input name="password" type="password" class="bg-transparent pl-2 outline-none border-none"
+                        id="Passwordd" placeholder="Password" required autocomplete="current_password" autofocus>
+                </div>
+
+                @error('password')
+                <span style="position: absolute;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+                @error('email')
+                <span style="position: absolute;" class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+
+
+                <button id="vjg2" class="block w-full bg-[#FA4646] mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+                    type="submit">Login</button>
+                <a href="/register" class="dark:text-zinc-300 text-zinc-700 text-sm ml-2 hover:text-blue-500 cursor-pointer">New around here?
+                                    Sign up</a>
+            </form>
         </div>
     </div>
+</div>
+
 
 
 @endsection
