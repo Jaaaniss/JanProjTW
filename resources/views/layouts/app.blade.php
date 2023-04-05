@@ -98,9 +98,11 @@
                                     <span class="block text-sm  text-zinc-500 truncate dark:text-zinc-300">{{ Auth::user()->email }}</span>
                                   </div>
                                   <ul class="py-2" aria-labelledby="user-menu-button">
+                                  @if (Auth::user()->id == 1)
                                     <li>
                                       <a href="/manage_tables/manage_vans" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
                                     </li>
+                                    @endif
                                     <li>
                                       <a href="/auth/user/user_profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
                                     </li>
