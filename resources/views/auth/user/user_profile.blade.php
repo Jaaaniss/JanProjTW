@@ -2,7 +2,6 @@
 @section('content')
 
 
-
     <div class="container">
         @if (session('status'))
             <h6 class="alert alert-success">{{ session('status') }}</h6>
@@ -125,7 +124,5 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/darkmode.js') }}"></script>
-    <script src="{{ asset('js/ajax.js') }}"></script>
     <script src="{{ asset('js/edit_profile.js') }}"></script>
 @endsection

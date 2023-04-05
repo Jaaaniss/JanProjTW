@@ -58,5 +58,4 @@
         </div>
     </div>
 
-    <script src="{{ asset('js/darkmode.js') }}"></script>
 @endsection

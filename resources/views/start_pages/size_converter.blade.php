@@ -167,5 +167,4 @@
 
     <script src="{{ asset('js/ajax.js') }}"></script>
     <script src="{{ asset('js/show-hide.js') }}"></script>
-    <script src="{{ asset('js/darkmode.js') }}"></script>
 @endsection

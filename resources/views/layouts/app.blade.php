@@ -18,6 +18,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwind.css') }}">
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+
+
+
 
 
     <title>JSneaks</title>
@@ -31,155 +37,6 @@
 
 
     <div id="app">
-        {{-- <nav style="padding-top:300px" class="bg-white border-gray-200 dark:bg-zinc-800 dark:border-gray-700">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <div class="filter-none dark:invert">
-                    <a href="/">
-                        <img id="picturenav" src="{{ asset('/image/LOGO2.png') }}" alt="Girl in a jacket">
-                    </a>
-                </div>
-                <button data-collapse-toggle="navbar-multi-level" type="button"
-                    class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-multi-level" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
-                    <ul
-                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-zinc-800 dark:border-gray-700">
-                        <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
-                                aria-current="page">Home</a>
-                        </li>
-                        <li>
-
-                            <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                                class="flex items-center justify-between w-full py-2 pl-3 pr-4  text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Authorize<svg
-                                    class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd"></path>
-                                </svg></button>
-                            <!-- Dropdown menu -->
-
-
-                            @guest
-                                <div id="dropdownNavbar"
-                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
-                                        aria-labelledby="dropdownLargeButton">
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Authorize</a>
-                                        </li>
-                                        <li aria-labelledby="dropdownNavbarLink">
-                                            <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
-                                                data-dropdown-placement="right-start" type="button"
-                                                class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Authorize<svg
-                                                    aria-hidden="true" class="w-5 h-5" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd"
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg></button>
-                                            <div id="doubleDropdown"
-                                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                                    aria-labelledby="doubleDropdownButton">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Login</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Register</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            @endguest
-
-                            @auth
-                                <div id="dropdownNavbar"
-                                    class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
-                                        aria-labelledby="dropdownLargeButton">
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Authorize</a>
-                                        </li>
-                                        <li aria-labelledby="dropdownNavbarLink">
-                                            <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown"
-                                                data-dropdown-placement="right-start" type="button"
-                                                class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Authorize<svg
-                                                    aria-hidden="true" class="w-5 h-5" fill="currentColor"
-                                                    viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd"
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd"></path>
-                                                </svg></button>
-                                            <div id="doubleDropdown"
-                                                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-                                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                                                    aria-labelledby="doubleDropdownButton">
-                                                    <li>
-                                                        <a href="#"
-                                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Login</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#"
-                                                            class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Register</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a href="#"
-                                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-                                        </li>
-                                    </ul>
-                                    <div class="py-1">
-                                        <a href="#"
-                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign
-                                            out</a>
-                                    </div>
-                                </div>
-                            @endauth
-                        </li>
-
-
-                        <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-                        </li>
-
-
-                        <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav> --}}
 
         <div class="apple-navbar">
             <header
@@ -193,18 +50,19 @@
                                 </div>
                             </a>
                         </div>
-                        <div class=" md:flex md:items-center md:justify-center md:gap-5">
+                        <div class="hidden md:inline md:flex md:items-center md:justify-center md:gap-5">
                             <a aria-current="page"
-                                class="dark:text-white inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-200 dark:hover:bg-zinc-700 hover:text-gray-900"
-                                href="#">Home</a>
-                            <a class="dark:text-white inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-200 dark:hover:bg-zinc-700 hover:text-gray-900"
+                                class="dark:text-white inline-block rounded-lg px-2 py-1 text-sm font-medium text-zinc-900 transition-all duration-200 hover:bg-zinc-200 dark:hover:bg-[#383838] hover:text-zinc-900"
+                                href="/">Home</a>
+                            <a class="dark:text-white inline-block rounded-lg px-2 py-1 text-sm font-medium text-zinc-900 transition-all duration-200 hover:bg-zinc-200 dark:hover:bg-[#383838] hover:text-zinc-900"
                                 href="/start_pages/size_converter">Size converter</a>
                         </div>
                         <div class="flex items-center justify-end gap-3">
-                            <div class="flex md:order-2 divide-x">
+
+                            <div class="flex md:order-2 divide-x dark:divide-slate-500">
                                 <div class="darkmode-button pr-2">
                                     <button id="theme-toggle" type="button"
-                                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                        class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#383838] focus:outline-none focus:ring-4 focus:ring-transparent dark:focus:ring-transparent rounded-lg text-sm p-2.5">
                                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -217,22 +75,55 @@
                                         </svg>
                                     </button>
                                 </div>
+                                @guest
                                 <div class="authorize-buttons flex justify-center pl-1">
-                                        <a class=" mr-2 ml-1 inline-flex items-center justify-center rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white dark:shadow-md shadow-sm transition-all duration-150 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
+                                        <a class=" mr-1 ml-1 inline-flex items-center justify-center rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white dark:shadow-md shadow-sm transition-all duration-150 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
                                         href="/login">Login</a>
-                                        <a class="border border-gray-200 mr-2 ml-1 inline-flex items-center justify-center rounded-lg bg-white dark:bg-[#ababab] dark:border-transparent dark:hover:bg-gray-100 px-3 py-2 text-sm font-semibold text-black dark:shadow-md shadow-sm transition-all duration-150 hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                                        <a class="border border-gray-200 mr-2 ml-1 inline-flex items-center justify-center rounded-lg bg-white dark:border-transparent dark:hover:bg-gray-100 px-3 py-2 text-sm font-semibold text-black dark:shadow-md shadow-sm transition-all duration-150 hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                                         href="/register">Register</a>
                                 </div>
+                                @endguest
                             </div>
+
+                            @auth
+                            <div class="flex items-center md:order-2">
+                                <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+                                  <span class="sr-only">Open user menu</span>
+                                  <img class="w-8 h-8 rounded-full" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="user photo">
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div class="z-50 hidden my-4 text-base bg-[#f6f6f6] list-none bg-white divide-y divide-zinc-200 rounded-lg shadow dark:bg-[#434343] dark:divide-zinc-600" id="user-dropdown">
+                                  <div class="px-4 py-3">
+                                    <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
+                                    <span class="block text-sm  text-zinc-500 truncate dark:text-zinc-300">{{ Auth::user()->email }}</span>
+                                  </div>
+                                  <ul class="py-2" aria-labelledby="user-menu-button">
+                                    <li>
+                                      <a href="/manage_tables/manage_vans" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
+                                    </li>
+                                    <li>
+                                      <a href="/auth/user/user_profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
+                                    </li>
+                                    <li>
+                                      <a href="/search_size" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Search your size') }}</a>
+                                    </li>
+                                    <li>
+                                      <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                  </ul>
+                                </div>
+                            </div>
+                            @endauth
                         </div>
                     </div>
                 </div>
             </header>
         </div>
 
-
     </div>
-
 
     <main class="dark:bg-[#323232] blade" class="py-4">
         @yield('content')

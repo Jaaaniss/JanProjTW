@@ -63,19 +63,5 @@
         </div>
     @endrole
 
-<script src="{{ asset('js/darkmode.js') }}"></script>
-<script src="{{ asset('js/ajax.js') }}"></script>
 
 @endsection
-
-<style>
-@media (max-width: 575px){
-    .blade {
-        height: 910px;
-    }}
-
-    @media (min-width: 575px){
-        .blade {
-            height: 910px;
-        }}
-</style>

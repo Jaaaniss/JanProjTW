@@ -66,6 +66,5 @@
         </div>
     @endrole
 
-    <script src="{{ asset('js/darkmode.js') }}"></script>
-    <script src="{{ asset('js/ajax.js') }}"></script>
+
 @endsection

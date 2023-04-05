@@ -70,9 +70,6 @@
         </div>
     </div>
 
-
-    <script src="{{ asset('js/ajax.js') }}"></script>
-    <script src="{{ asset('js/show-hide.js') }}"></script>
-    <script src="{{ asset('js/darkmode.js') }}"></script>
+    
     <script src="{{ asset('js/password.js') }}"></script>
 @endsection

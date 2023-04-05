@@ -2,7 +2,6 @@
 @section('content')
 
 
-
         <div style="display: flex;align-items: center;justify-content: center;height: 100%;" class="container">
 
             <div class="lielaiscontainer">
@@ -56,8 +55,4 @@
             </div>
         </div>
 
-
-    <script src="{{ asset('js/ajax.js') }}"></script>
-    <script src="{{ asset('js/show-hide.js') }}"></script>
-    <script src="{{ asset('js/darkmode.js') }}"></script>
 @endsection
