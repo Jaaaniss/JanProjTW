@@ -59,7 +59,7 @@
                         </div>
                         <div class="flex items-center justify-end gap-3">
 
-                            <div class="flex md:order-2 divide-x dark:divide-slate-500">
+                            <div class="flex md:order-2 divide-x dark:divide-zinc-500">
                                 <div class="darkmode-button pr-2">
                                     <button id="theme-toggle" type="button"
                                         class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#383838] focus:outline-none focus:ring-4 focus:ring-transparent dark:focus:ring-transparent rounded-lg text-sm p-2.5">
@@ -77,7 +77,7 @@
                                 </div>
                                 @guest
                                 <div class="authorize-buttons flex justify-center pl-1">
-                                        <a class=" mr-1 ml-1 inline-flex items-center justify-center rounded-lg bg-red-600 px-3 py-2 text-sm font-semibold text-white dark:shadow-md shadow-sm transition-all duration-150 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
+                                        <a class=" mr-1 ml-1 inline-flex items-center justify-center rounded-lg bg-[#FA4646] px-3 py-2 text-sm font-semibold text-white dark:shadow-md shadow-sm transition-all duration-150 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
                                         href="/login">Login</a>
                                         <a class="border border-gray-200 mr-2 ml-1 inline-flex items-center justify-center rounded-lg bg-white dark:border-transparent dark:hover:bg-gray-100 px-3 py-2 text-sm font-semibold text-black dark:shadow-md shadow-sm transition-all duration-150 hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                                         href="/register">Register</a>
@@ -125,7 +125,7 @@
 
     </div>
 
-    <main class="dark:bg-[#323232] blade" class="py-4">
+    <main class="dark:bg-[#323232] bg-white blade" class="py-4">
         @yield('content')
     </main>
 
