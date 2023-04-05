@@ -17,7 +17,10 @@
     "dependencies": {
         "bootstrap": "^5.2.3",
         "flowbite": "^1.6.4",
+        "i": "^0.3.7",
         "jquery": "^3.6.3",
+        "npm": "^9.6.3",
+        "or": "^0.2.0",
         "popper.js": "^1.16.1",
         "shoe-size-converter": "^1.0.1"
     }
