@@ -6,6 +6,21 @@
                 padding-top: 250px
             }
         }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+        border: 1px solid rgba(0, 128, 0, 0);
+        -webkit-text-fill-color: rgb(0, 0, 0);
+        -webkit-box-shadow: 0 0 0px 1000px #00000000 inset;
+        transition: background-color 5000s ease-in-out 0s;
+        }
     </style>
 
     <div class="w-full h-screen md:flex">
@@ -22,7 +37,7 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                        <div class="text-zinc-700 dark:text-zinc-200 border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -35,7 +50,7 @@
 
 
 
-                        <div class="border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl">
+                        <div class="text-zinc-700 dark:text-zinc-200 border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
