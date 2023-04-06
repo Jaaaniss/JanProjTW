@@ -32,7 +32,7 @@
                                     clip-rule="evenodd" />
                             </svg>
                             <input class="border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none" type="text" name="name"
-                                id="" placeholder="Username" />
+                                id="" autofocus placeholder="Username" />
                         </div>
 
                         <div class="border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -43,7 +43,7 @@
                             </svg>
                             <input name="email" type="email" class="border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none"
                                 id="Emaill" placeholder="email@example.com" required autocomplete="email"
-                                value="{{ old('email') }}" autofocus>
+                                value="{{ old('email') }}" >
                         </div>
 
                         <div class="border-transparent dark:bg-[#4a4a4c] bg-white flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
