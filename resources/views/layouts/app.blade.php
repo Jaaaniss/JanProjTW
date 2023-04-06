@@ -37,7 +37,7 @@
 
         <div class="w-auto apple-navbar">
             <header
-                class="dark:bg-[#4a4a4c]/80 dark:border-zinc-800 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow-lg dark:shadow-xl backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+                class="dark:bg-[#4a4a4c]/80 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-none bg-white/80 py-3 shadow-lg dark:shadow-xl backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
                 <div class="px-4">
                     <div class="flex items-center justify-between">
                         <div class=" flex shrink-0">
