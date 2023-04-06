@@ -23,9 +23,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
 
 
-
-
-
     <title>JSneaks</title>
 
     @vite('resources/css/app.css')
@@ -38,15 +35,16 @@
 
     <div id="app">
 
-        <div class="apple-navbar">
+        <div class="w-auto apple-navbar">
             <header
-                class="dark:bg-[#4a4a4c] dark:border-zinc-800 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow-lg dark:shadow-xl backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+                class="dark:bg-[#4a4a4c]/80 dark:border-zinc-800 fixed inset-x-0 top-0 z-30 mx-auto w-full max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow-lg dark:shadow-xl backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
                 <div class="px-4">
                     <div class="flex items-center justify-between">
                         <div class=" flex shrink-0">
                             <a aria-current="page" class="flex items-center" href="/">
                                 <div class="dark:invert">
-                                    <img id="imgg" src="{{ asset('/image/LOGO.png') }}" width="100" height="50" style="transform: scaleX(-1);">
+                                    <img id="imgg" src="{{ asset('/image/LOGO.png') }}" width="100"
+                                        height="50" style="transform: scaleX(-1);">
                                 </div>
                             </a>
                         </div>
@@ -65,7 +63,8 @@
                                         class="text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-[#383838] focus:outline-none focus:ring-4 focus:ring-transparent dark:focus:ring-transparent rounded-lg text-sm p-2.5">
                                         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                                            </path>
                                         </svg>
                                         <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
                                             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -76,48 +75,63 @@
                                     </button>
                                 </div>
                                 @guest
-                                <div class="authorize-buttons flex justify-center pl-1">
+                                    <div class="authorize-buttons flex justify-center pl-1">
                                         <a class=" mr-1 ml-1 inline-flex items-center justify-center rounded-lg bg-[#FA4646] px-3 py-2 text-sm font-semibold text-white dark:shadow-md shadow-sm transition-all duration-150 hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 "
-                                        href="/login">Login</a>
+                                            href="/login">Login</a>
                                         <a class="border border-gray-200 mr-2 ml-1 inline-flex items-center justify-center rounded-lg bg-white dark:border-transparent dark:hover:bg-gray-100 px-3 py-2 text-sm font-semibold text-black dark:shadow-md shadow-sm transition-all duration-150 hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                                        href="/register">Register</a>
-                                </div>
+                                            href="/register">Register</a>
+                                    </div>
                                 @endguest
                             </div>
 
                             @auth
-                            <div class="flex items-center md:order-2">
-                                <button type="button" class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
-                                  <span class="sr-only">Open user menu</span>
-                                  <img class="w-8 h-8 rounded-full" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="user photo">
-                                </button>
-                                <!-- Dropdown menu -->
-                                <div class="z-50 hidden my-4 text-base bg-[#f6f6f6] list-none bg-white divide-y divide-zinc-200 rounded-lg shadow dark:bg-[#434343] dark:divide-zinc-600" id="user-dropdown">
-                                  <div class="px-4 py-3">
-                                    <span class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
-                                    <span class="block text-sm  text-zinc-500 truncate dark:text-zinc-300">{{ Auth::user()->email }}</span>
-                                  </div>
-                                  <ul class="py-2" aria-labelledby="user-menu-button">
-                                  @if (Auth::user()->id == 1)
-                                    <li>
-                                      <a href="/manage_tables/manage_vans" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
-                                    </li>
-                                    @endif
-                                    <li>
-                                      <a href="/auth/user/user_profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
-                                    </li>
-                                    <li>
-                                      <a href="/search_size" class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Search your size') }}</a>
-                                    </li>
-                                    <li>
-                                      <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
-                                    </li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                  </ul>
+                                <div class="flex items-center md:order-2">
+                                    <button type="button"
+                                        class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                        id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
+                                        data-dropdown-placement="bottom">
+                                        <span class="sr-only">Open user menu</span>
+                                        <img class="w-8 h-8 rounded-full"
+                                            src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png"
+                                            alt="user photo">
+                                    </button>
+                                    <!-- Dropdown menu -->
+                                    <div class="z-50 hidden my-4 text-base bg-[#f6f6f6] list-none bg-white divide-y divide-zinc-200 rounded-lg shadow dark:bg-[#434343] dark:divide-zinc-600"
+                                        id="user-dropdown">
+                                        <div class="px-4 py-3">
+                                            <span
+                                                class="block text-sm text-gray-900 dark:text-white">{{ Auth::user()->name }}</span>
+                                            <span
+                                                class="block text-sm  text-zinc-500 truncate dark:text-zinc-300">{{ Auth::user()->email }}</span>
+                                        </div>
+                                        <ul class="py-2" aria-labelledby="user-menu-button">
+                                            @if (Auth::user()->id == 1)
+                                                <li>
+                                                    <a href="/manage_tables/manage_vans"
+                                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
+                                                </li>
+                                            @endif
+                                            <li>
+                                                <a href="/auth/user/user_profile"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="/search_size"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Search your size') }}</a>
+                                            </li>
+                                            <li>
+                                                <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white"
+                                                    href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                    {{ __('Logout') }}</a>
+                                            </li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                class="d-none">
+                                                @csrf
+                                            </form>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
                             @endauth
                         </div>
                     </div>
@@ -127,7 +141,7 @@
 
     </div>
 
-    <main class="dark:bg-[#323232] bg-white blade" class="py-4">
+    <main class="dark:bg-[#323232] bg-zinc-100 blade" class="py-4">
         @yield('content')
     </main>
 

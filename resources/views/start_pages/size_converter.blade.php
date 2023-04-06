@@ -2,169 +2,447 @@
 @section('content')
 
 
+{{-- <style>
+    #size1  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
 
+    #size2  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
 
+    #size3  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
 
-    <div class=lielaiss>
-        <div class="container" style="display: flex;justify-content: center; flex-direction:column;">
-            <div class="card mb-3" id="cardmb3">
-                <div class="row g-0" style="margin-left: 0; margin-right:0;">
-                    <div style="display: flex;justify-content: center;background: black;border: 1px solid black;justify-content: center;background: black;"
-                        id="goodinportrait" class="col-md-4">
-                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQnv9ij36ZmZzFbQ3agBIbpsB-sXXJkqqTEGMP3KKyqgNEfgLKS"
-                            class="img-fluid rounded-start" alt="...">
+    #size4  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size5  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size6  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size7  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size8  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size9  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size10  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size11  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size12 {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size13  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size14  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size15  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+    #size16  {
+    background: #000000;
+    width: 35px;
+    display: flex;
+    height: 25px;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    }
+
+</style> --}}
+
+    <div class=" pt-[150px] flex flex-col items-center">
+
+        <a
+            class=" dark:hover:bg-[#3f3f3f] dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white  rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full hover:bg-gray-100  ">
+
+            <div class="flex align-center">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                    src="{{ asset('/image/vans.png') }}" alt="">
+            </div>
+
+            <div class=" w-full">
+                <div class=" flex flex-col justify-between p-4 leading-normal">
+                    <div class="selekts">
+                        <select id="ident"
+                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:border-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            @foreach ($vans as $value)
+                                <option value="" disabled selected hidden>--> Select your feet size <--</option>
+                                <option class="optioncolor" id="ident" value="{{ $value->cm }}">{{ $value->cm }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div id="cardteksts" class="col-md-8">
-                        <div class="card-body">
-                            <div class="selekts" >
-                                <select id="ident" class="form-control1">
-                                    @foreach ($vans as $value)
-                                        <option value="" disabled selected hidden>--> Select your feet size <--</option>
-                                        <option class="optioncolor" id="ident" value="{{ $value->cm }}">{{ $value->cm }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <ul class="list-group list-group-flush " style="font-size: 20px;">
-                                <li class="listt">Your EU size --><span id="size1"></span></li>
-                                <li class="listt">Your UK size --><span id="size2"></span></li>
-                                <li class="listt">Your US M size --><span id="size3"></span></li>
-                                <li class="listt">Your US W size --><span id="size4"></span></li>
-                                <li class="list-group-item1">
-                                    <div class="lala1">
-                                        <!-- <a href="https://www.adidas.com/us/shoes" class="card-link">Shop</a> -->
-                                        <a1 href="#collapse" class="nav-toggle">More info</a1>
-                                    </div>
-                                    <div id="collapse" style="display:none">
-                                        <p style="font-size: 18px; margin-bottom: 1px;">Size conversions are approximate.
-                                            Shoes should be tried on for proper fit.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <ul class=" space-y-4 text-left text-gray-500 dark:text-gray-400">
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>EU size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size1"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>UK size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size2"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-M size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size3"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-W size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size4"></span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="card mb-3" id="cardmb3">
-                <div class="row g-0" style="margin-left: 0; margin-right:0;">
-                    <div style="display: flex;justify-content: center;background: black;border: 1px solid black;justify-content: center;background: black;"
-                        id="goodinportrait" class="col-md-4">
-                        <img src="https://th.bing.com/th/id/OIP.-5BzDHfG77aUDltzc_LIKQAAAA?pid=ImgDet&rs=1"
-                            class="img-fluid rounded-start" alt="...">
-                    </div>
-                    <div id="cardteksts" class="col-md-8">
-                        <div class="card-body">
+        </a>
 
-                            <div class="selekts">
-                                <select id="ident2" class="form-control1">
-                                    @foreach ($nike as $value)
-                                        <option value="" disabled selected hidden>--> Select your feet size <--</option>
-                                        <option class="optioncolor" id="ident2" value="{{ $value->cm }}">{{ $value->cm }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
+        <a
+            class=" dark:hover:bg-[#3f3f3f] dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-3 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full hover:bg-gray-100">
 
-                            <ul class="list-group list-group-flush" style="font-size: 20px;">
-                                <li class="listt">Your EU size --><span id="size5"></span></li>
-                                <li class="listt">Your UK size --><span id="size6"></span></li>
-                                <li class="listt">Your US M size --><span id="size7"></span></li>
-                                <li class="listt">Your US W size --><span id="size8"></span></li>
-                                <li class="list-group-item1">
-                                    <div class="lala1">
-                                        <!-- <a href="https://www.adidas.com/us/shoes" class="card-link">Shop</a> -->
-                                        <a1 href="#collapse2" class="nav-toggle2">More info</a1>
-                                    </div>
-                                    <div id="collapse2" style="display:none">
-                                        <p style="font-size: 18px; margin-bottom: 1px;">Nike shoes fit slightly narrow at
-                                            true to size, generally speaking.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="flex align-center">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                    src="{{ asset('/image/nike.png') }}" alt="">
+            </div>
+
+            <div class="w-full">
+                <div class=" flex flex-col justify-between p-4 leading-normal">
+                    <div class="selekts">
+                        <select id="ident2"
+                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            @foreach ($nike as $value)
+                                <option value="" disabled selected hidden>--> Select your feet size <--</option>
+                                <option class="optioncolor" id="ident2" value="{{ $value->cm }}">{{ $value->cm }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
+                    <ul class=" space-y-4 text-left text-gray-500 dark:text-gray-400">
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>EU size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size5"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>UK size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size6"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-M size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size7"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-W size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size8"></span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="card mb-3" id="cardmb3">
-                <div class="row g-0" style="margin-left: 0; margin-right:0;">
-                    <div style="display: flex;justify-content: center;background: black;border: 1px solid black;justify-content: center;background: black;"
-                        id="goodinportrait" class="col-md-4">
-                        <img src="https://seeklogo.com/images/A/adidas-logo-49D5BEBA90-seeklogo.com.png"
-                            class="img-fluid rounded-start cardimg1" alt="...">
-                    </div>
-                    <div id="cardteksts" class="col-md-8">
-                        <div class="card-body">
-                            <div class="selekts">
-                                <select id="ident3" class="form-control1">
-                                    @foreach ($adidas as $value)
-                                        <option value="" disabled selected hidden>--> Select your feet size <--</option>
-                                        <option class="optioncolor" id="ident3" value="{{ $value->cm }}">{{ $value->cm }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <ul class="list-group list-group-flush" style="font-size: 20px;">
-                                <li class="listt">Your EU size --><span id="size9"></span></li>
-                                <li class="listt">Your UK size --><span id="size10"></span></li>
-                                <li class="listt">Your US M size --><span id="size11"></span></li>
-                                <li class="listt">Your US W size --><span id="size12"></span></li>
-                                <li class="list-group-item1">
-                                    <div class="lala1">
-                                        <!-- <a href="https://www.adidas.com/us/shoes" class="card-link">Shop</a> -->
-                                        <a1 href="#collapse3" class="nav-toggle3">More info</a1>
-                                    </div>
-                                    <div id="collapse3" style="display:none">
-                                        <p style="font-size: 18px; margin-bottom: 1px;">For tight fit, go one size down.
-                                            For loose fit, go one size up.</p>
-                                    </div>
-                                </li>
-                            </ul>
+        </a>
 
-                        </div>
+        <a
+            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-3 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full hover:bg-gray-100 dark:hover:bg-[#3f3f3f] dark:bg-[#4a4a4c]">
+
+            <div class="flex align-center">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                    src="{{ asset('/image/adidas.png') }}" alt="">
+            </div>
+
+            <div class="w-full">
+                <div class=" flex flex-col justify-between p-4 leading-normal">
+                    <div class="selekts">
+                        <select id="ident3"
+                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            @foreach ($adidas as $value)
+                                <option value="" disabled selected hidden>--> Select your feet size <--</option>
+                                <option class="optioncolor" id="ident3" value="{{ $value->cm }}">
+                                    {{ $value->cm }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
+                    <ul class=" space-y-4 text-left text-gray-500 dark:text-gray-400">
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>EU size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size9"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>UK size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size10"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-M size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size11"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-W size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size12"></span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="card mb-3" id="cardmb3">
-                <div class="row g-0" style="margin-left: 0; margin-right:0;">
-                    <div style="display: flex;justify-content: center;background: black;border: 1px solid black;justify-content: center;background: black;"
-                        id="goodinportrait" class="col-md-4">
-                        <img src="https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dwc9cf77d7/images/page-designer/2021/april/12069_Comp_A_Mobile.jpg?sw=991&sfrm=jpg" height: "332.81";
-                        style="max-height: 332.81px;"  class="img-fluid rounded-start cardimg1" alt="...">
+        </a>
+
+        <a
+            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-3 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full hover:bg-gray-100 dark:hover:bg-[#3f3f3f] dark:bg-[#4a4a4c]">
+
+            <div class="flex align-center">
+                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                    src="{{ asset('/image/newbalance.png') }}" alt="">
+            </div>
+
+            <div class="w-full">
+                <div class=" flex flex-col justify-between p-4 leading-normal">
+                    <div class="selekts">
+                        <select id="ident4"
+                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            @foreach ($newbalance as $value)
+                                <option value="" disabled selected hidden>--> Select your feet size <--</option>
+                                <option class="optioncolor" id="ident4" value="{{ $value->cm }}">
+                                    {{ $value->cm }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div id="cardteksts" class="col-md-8">
-                        <div class="card-body">
-                            <div class="selekts">
-                                <select id="ident4" class="form-control1">
-                                    @foreach ($newbalance as $value)
-                                        <option value="" disabled selected hidden>--> Select your feet size <--</option>
-                                        <option class="optioncolor" id="ident4" value="{{ $value->cm }}">{{ $value->cm }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <ul class="list-group list-group-flush " style="font-size: 20px;">
-                                <li class="listt">Your EU size --><span id="size13"></span></li>
-                                <li class="listt">Your UK size --><span id="size14"></span></li>
-                                <li class="listt">Your US M size --><span id="size15"></span></li>
-                                <li class="listt">Your US W size --><span id="size16"></span></li>
-                                <li class="list-group-item1">
-                                    <div class="lala1">
-                                        <!-- <a href="https://www.adidas.com/us/shoes" class="card-link">Shop</a> -->
-                                        <a1 href="#collapse4" class="nav-toggle4">More info</a1>
-                                    </div>
-                                    <div id="collapse4" style="display:none">
-                                        <p style="font-size: 18px; margin-bottom: 1px;">Choose the larger size if your feet
-                                            are between sizes. You can adjust for a better fit with socks, insoles and
-                                            lacing patterns.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <ul class=" space-y-4 text-left text-gray-500 dark:text-gray-400">
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>EU size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size13"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>UK size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size14"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-M size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size15"></span>
+                        </li>
+                        <li class="flex justify-between items-center space-x-3">
+                            <span>US-W size</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-arrow-right">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                            <span id="size16"></span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </a>
+
+
     </div>
-    </div>
+
+
+
+
+
+
 
 
 
     <script src="{{ asset('js/ajax.js') }}"></script>
-    <script src="{{ asset('js/show-hide.js') }}"></script>
 @endsection
