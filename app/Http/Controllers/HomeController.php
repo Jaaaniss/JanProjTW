@@ -13,7 +13,7 @@ class HomeController extends Controller
 
     {
 
-        return view('/auth/user/change-password');
+        return view('/auth/user/user_profile');
 
     }
 

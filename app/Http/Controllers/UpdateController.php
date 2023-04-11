@@ -54,7 +54,6 @@ class UpdateController extends Controller {
         $profile = User::find($id);
         $profile->name = $request->input('name');
         $profile->email = $request->input('email');
-        $profile->password = $request->input('password');
         $profile->foot_size_cm = $request->input('foot_size_cm');
         $profile->update();
         return redirect('auth/user/user_profile')->with('status','Profile Updated Successfully');
