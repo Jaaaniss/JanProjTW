@@ -37,8 +37,8 @@ Route::get('/auth/user/user_profile', function () {
 });
 
 // Paroles mainisanai
-Route::get('auth/user/change-password', [HomeController::class, 'changePassword'])->name('change-password');
-Route::post('auth/user/change-password', [HomeController::class, 'updatePassword'])->name('update-password');
+Route::get('auth/user/user_profile', [HomeController::class, 'changePassword'])->name('change-password');
+Route::post('auth/user/user_profile', [HomeController::class, 'updatePassword'])->name('update-password');
 
 
 Route::get('/start_pages/size_converter',[VansController::class,'vans']);
