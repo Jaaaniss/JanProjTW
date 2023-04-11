@@ -2,41 +2,211 @@
 @section('content')
 
 
-<div class="py-[200px] max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-    <div class="p-4 sm:p-8 bg-gray-50 dark:bg-gray-800 shadow sm:rounded-lg">
-        <div class="max-w-xl">
+<div class="py-[200px] flex flex-col items-center">
 
-            <section>
-                <header>
-                    <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        {{-- {{ __('Roles') }} --}}
-                    </h2>
-                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                        {{-- {{ __("Update your account's profile information and email address.") }} --}}
-                    </p>
-                </header>
+    <div
+        class="my-3 p-4 sm:p-8 bg-gray-50 dark:bg-gray-800 shadow rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
 
-                {{-- <form method="POST" action="{{ route('admin.roles.store') }}">
-                    @csrf --}}
-                    <div>
-                        <div class="pt-6">
-                            <div class="mb-6">
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Role name </label>
-                                <input type="text" id="name" name="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
+        <div class="">
+            <div class="pt-6">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Username
+                    </label>
+                    <input value="{{ Auth::user()->name }}" type="text" id="name" name="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="pt-6">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Email
+                    </label>
+                    <input value="{{ Auth::user()->email }}" type="text" id="name" name="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="pt-6">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Foot size (cm)
+                    </label>
+                    <input value="{{ auth()->user()->foot_size_cm }}" type="text" id="name" name="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div
+        class="my-3 p-4 sm:p-8 bg-gray-50 dark:bg-gray-800 shadow rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+
+        <div class="">
+            <div class="pt-6">
+                <div class="mb-6">
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Current Password
+                    </label>
+                    <input value="{{ Auth::user()->password }}" type="password" id="name" name="name"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div
+        class="my-3 p-4 sm:p-8 bg-gray-50 dark:bg-gray-800 shadow rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+
+        
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+    @if (session('status'))
+    <h6 class="alert alert-success">{{ session('status') }}</h6>
+    @endif
+    <div style="width: 100%;" class="lielaiscontainer">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a id="a" href="/">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="cardpicture" class="card mb-4">
+                    <div style="display: flex;flex-direction: column;align-items: center;" id="showDiv2"
+                        class="card-body text-center">
+                        <img id="profilepic"
+                            src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="avatar"
+                            class="rounded-circle img-fluid" style="width: 150px;">
+                        <h5 class="my-3">{{ Auth::user()->name }}</h5>
+                        <p id="textmuted" class="text-muted mb-4">JSneaks website user</p>
+                        <div class="d-flex justify-content-center mb-2" style="width: 100%">
+
+                            <div class="btn-group" role="group" aria-label="Basic example" style="width: 100%">
+                                <button style="height: 50px;" id="readonly" type="button" class="btn btn-danger">Edit
+                                    profile</button>
+                                <button style="height: 50px;" value="Submit" id="saveChanges_Button" type="submit"
+                                    class="btn btn-primary">Save</button>
+                                <a style="height: 50px; display: flex; justify-content: center; align-items: center;"
+                                    href="/auth/user/change-password" type="button" class="btn btn-primary">Change
+                                    password</a>
+
                             </div>
-                            {{-- @error('name')
-                                <span class="text-red-400 text-sm">{{ $message }}</span>
-                            @enderror --}}
-                            {{-- <x-primary-button>{{ __('Save') }}</x-primary-button> --}}
                         </div>
                     </div>
-                {{-- </form> --}}
-            </section>
+                </div>
+            </div>
 
+            <div class="col-lg-8">
+                <div id="cardinfo" class="card mb-4">
+                    <div style="padding-top: 38px; padding-bottom: 38px;;" class="card-body">
+                        <form action="{{ url('update_user/' . Auth::user()->id) }}" id="myForm" method="POST">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Username</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input name='name' style="background: transparent;border: none;" readonly
+                                        id="textmuted" class="text-muted mb-0" value="{{ Auth::user()->name }}">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input name='email' style="background: transparent;border: none;" readonly
+                                        id="textmuted" class="text-muted mb-0" value="{{ Auth::user()->email }}">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Current Password</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type='password' name='password' style="background: transparent;border: none;"
+                                        readonly id="textmuted" class="form-control text-muted mb-0"
+                                        value="{{ Auth::user()->password }}">
+                                </div>
+                            </div>
+                            <div id="showDiv" style="display:none;">
+                                <div style="padding-bottom: 10px;padding-top: 20px;" class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">New Password</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type='password' style="background: transparent;" id="textmuted"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div style="padding-top: 10px;" class="row">
+                                    <div class="col-sm-3">
+                                        <p class="mb-0">Confirm New Password</p>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <input type='password' style="background: transparent;" id="textmuted"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Foot size (cm)</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input name='foot_size_cm' style="background: transparent;border: none;" readonly
+                                        id="textmuted" class="text-muted mb-0"
+                                        value="{{ auth()->user()->foot_size_cm }}">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Role</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <p id="textmuted" class="text-muted mb-0">User</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-
-    <script src="{{ asset('js/edit_profile.js') }}"></script>
+<script src="{{ asset('js/edit_profile.js') }}"></script>
 @endsection
