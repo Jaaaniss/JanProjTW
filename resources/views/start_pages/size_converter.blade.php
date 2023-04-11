@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    
+
 
     <div class=" pt-[150px] pb-[70px] px-7 flex flex-col items-center">
 
@@ -429,4 +429,5 @@
 
 
     <script src="{{ asset('js/ajax.js') }}"></script>
+
 @endsection

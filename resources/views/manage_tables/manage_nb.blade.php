@@ -3,79 +3,88 @@
 
 
     @role('Admin')
-        <div style="padding-top: 50px" class="container">
-            <div id="managee" class="row">
-                            {{-- <a href="{{ url('manage_adidas') }}" class="btn btn-primary float-end">Adidas</a>
-                    <a href="{{ url('manage_nike') }}" class="btn btn-primary float-end">Nike</a>
-                    <a href="{{ url('manage_vans') }}" class="btn btn-primary float-end">Vans</a> --}}
-                <div style="padding: 30px;" class="col-md-12">
-                    @if (session('status'))
-                        <h6 class="alert alert-success">{{ session('status') }}</h6>
-                    @endif
-                    <div id="kaards" class="card">
-                        <div id="headeris" class="card-header">
-                            <div class="h2table">
-                                <div class="dropdown">
-                                    <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        New Balance
-                                    </a>
-                                    <div style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 50px, 0px);"
-                                        class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="{{ url('manage_tables/manage_adidas') }}">Adidas</a>
-                                        <a class="dropdown-item" href="{{ url('manage_tables/manage_nike') }}">Nike</a>
-                                        <a class="dropdown-item" href="{{ url('manage_tables/manage_vans') }}">Vans</a>
-                                        <a class="dropdown-item" href="{{ url('manage_tables/manage_users') }}">Users</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="poga-add">
-                                <a href="{{ url('/manage_tables/add/add') }}" class="btn btnneed btn-primary float-end">Add Size</a>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered table-striped">
-                                <thead class="table-dark">
-                                    <tr>
-                                        <th>CM</th>
-                                        <th>EU</th>
-                                        <th>UK</th>
-                                        <th>US M</th>
-                                        <th>US W</th>
-                                        <th style="width: 250px !important;">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="table-darkk">
-                                    @foreach ($newbalance as $item4)
-                                        <tr>
-                                            <td>{{ $item4->cm }}</td>
-                                            <td>{{ $item4->eu }}</td>
-                                            <td>{{ $item4->uk }}</td>
-                                            <td>{{ $item4->usm }}</td>
-                                            <td>{{ $item4->usw }}</td>
-                                            <td>
-                                                <div class="stails">
-                                                    <a href="{{ url('manage_tables/edit/edit/' . $item4->id . '/nb') }}"
-                                                        style="width:100px; padding-left:20px; padding-right:20px;"
-                                                        class="btn btnneed btn-primary btn-sm">Edit size</a>
-                                                    <form action="{{ url('delete/' . $item4->id . '/nb') }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit"
-                                                            style="width:100px; padding-left:20px; padding-right:20px;"
-                                                            class="btn btnneed btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+    <div class="py-[200px] flex justify-center">
+        <div class=" w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+            <div class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 rounded-t-3xl flex items-center justify-between">
+                <div class='py-3'>
+                    <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
+                        class="mx-5 py-3 dark:text-white text-black bg-transparent focus:outline-none text-2xl font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center"
+                        type="button">New Balance<svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg></button>
+                    <div id="dropdown"
+                        class="z-10 hidden bg-zinc-200 divide-y divide-zinc-100 rounded-lg shadow w-44 dark:bg-zinc-800">
+                        <ul class="py-2 text-sm text-zinc-700 dark:text-zinc-200" aria-labelledby="dropdownDefaultButton">
+                            <li>
+                                <a href="{{ url('manage_tables/manage_vans') }}"
+                                    class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Vans</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('manage_tables/manage_nike') }}"
+                                    class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Nike</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('manage_tables/manage_adidas') }}"
+                                    class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Adidas</a>
+                            </li>
+                            <li>
+                                <a href="{{ url('manage_tables/manage_users') }}"
+                                    class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Users</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                <a href="{{ url('/manage_tables/add/add') }}"
+                    class="w-[150px] flex justify-center mx-5 py-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    type="button">Add size</a>
+            </div>
+
+            <div class="shadow-md relative overflow-x-auto shadow-md rounded-b-3xl">
+                <table class="dark:bg-[#454547] bg-[#ffffff] w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="shadow-xl shadow-[#0000000a] dark:shadow-[#00000017] text-xs text-gray-700 uppercase dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-9 py-3">CM</th>
+                            <th scope="col" class="px-9 py-3">EU</th>
+                            <th scope="col" class="px-9 py-3">UK</th>
+                            <th scope="col" class="px-9 py-3">US M</th>
+                            <th scope="col" class="px-9 py-3">US W</th>
+                            <th scope="col" class="px-9 py-3">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($newbalance as $item4)
+                            <tr
+                                class=" border-b dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-[#585858]">
+                                <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $item4->cm }}</td>
+                                <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $item4->eu }}</td>
+                                <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $item4->uk }}</td>
+                                <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $item4->usm }}</td>
+                                <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $item4->usw }}</td>
+                                <td
+                                    class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex flex-col">
+                                    <div class="stails">
+                                        <a href="{{ url('manage_tables/edit/edit/' . $item4->id . '/nb') }}"
+                                            class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                        <form action="{{ url('delete/' . $item4->id . '/nb') }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="font-bold dark:text-red-500 text-red-500 hover:underline">Remove</button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
     @endrole
 
 
