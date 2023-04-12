@@ -14,6 +14,7 @@ class HomeController extends Controller
         $user=User::all();
         return view('/auth/user/user_profile',compact('user'));
     }
+    
     public function changePassword()
 
     {

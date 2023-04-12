@@ -56,19 +56,14 @@ Route::get('/adidassize/{size}',[AdidasController::class,'index']);
 Route::get('/nbsize/{size}',[NBController::class,'index']);
 
 
-Route::POST('/enter_size',[SizeController::class,'insert']);
-
-
-Route::get('view-records','StudViewController@index');
-
 
 Route::middleware(['auth'])->group(function () {
 
     Route::delete('self-delete', [DestroyController::class, 'destroy_user_from_profile']);
-
     Route::put('update_user/{id}', [UpdateController::class, 'update_profile']);
 
 });
+
 
 Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
 
@@ -94,3 +89,7 @@ Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
     Route::delete('delete/{id}', [DestroyController::class, 'destroy_user']);
 
 });
+
+Route::POST('/enter_size',[SizeController::class,'insert']);
+
+Route::get('view-records','StudViewController@index');
