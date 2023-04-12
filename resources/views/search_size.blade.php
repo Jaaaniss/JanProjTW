@@ -3,7 +3,7 @@
 
 
 
-        <div style="display: flex;align-items: center;justify-content: center;height: 100%;" class="container">
+        <div style="display: flex;align-items: center;justify-content: center;height: 100%;" class="py-[250px] container">
 
             <div class="lielaiscontainer">
 

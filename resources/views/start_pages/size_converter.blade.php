@@ -5,10 +5,10 @@
     <div class=" pt-[150px] pb-[70px] px-7 flex flex-col items-center">
 
         <a
-            class="  dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white  rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
+            class="  dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white  rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
 
             <div class="flex align-center">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full rounded-t-3xl h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-3xl"
                     src="{{ asset('/image/vans.png') }}" alt="">
             </div>
 
@@ -109,10 +109,10 @@
         </a>
 
         <a
-            class=" dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
+            class=" dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
 
             <div class="flex align-center">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full rounded-t-3xl h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-3xl"
                     src="{{ asset('/image/nike.png') }}" alt="">
             </div>
 
@@ -212,10 +212,10 @@
         </a>
 
         <a
-            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
+            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
 
             <div class="flex align-center">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full rounded-t-3xl h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-3xl"
                     src="{{ asset('/image/adidas.png') }}" alt="">
             </div>
 
@@ -315,10 +315,10 @@
         </a>
 
         <a
-            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-lg shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
+            class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
 
             <div class="flex align-center">
-                <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-lg"
+                <img class="object-cover w-full rounded-t-3xl h-96 md:h-auto md:w-[20rem] md:rounded-none md:rounded-l-3xl"
                     src="{{ asset('/image/newbalance.png') }}" alt="">
             </div>
 

@@ -3,7 +3,7 @@
 
 
     @role('Admin')
-    <div class="py-[200px] flex justify-center">
+    <div class="py-[367.5px] flex justify-center">
 
 
         <div class=" bg-white dark:bg-[#454547] shadow-xl rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg ">
@@ -27,7 +27,7 @@
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foot size (cm)</label>
                         <input type="number" name="foot_size_cm" value="{{ $userr->foot_size_cm }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            required>
+                            >
                     </div>
                 </div>
                 <div class="flex flex-row justify-between">

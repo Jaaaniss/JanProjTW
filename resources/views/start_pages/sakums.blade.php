@@ -4,7 +4,7 @@
 
     <section class="pt-[236px] pb-[236px] text-gray-600 body-font">
         <div class="px-5">
-            <div class="text-center mb-20">
+            <div class="text-center mb-[90px]">
                 <div class="dark:invert flex justify-center ">
                     <img id="imgg" height="200px" width="200px" src="{{ asset('/image/LOGO.png') }}"
                         style="transform: scaleX(-1);">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="flex-grow">
                         <h2 class="dark:text-white  text-gray-900 text-xl title-font font-medium mb-3">Measure</h2>
-                        <p class="leading-relaxed text-lg">If you dont know, you can easly measure its lenght (Preferably in
+                        <p class="leading-relaxed text-lg">If you do not know, you can easly measure its length (Preferably in
                             cm)</p>
                     </div>
                 </div>
@@ -60,14 +60,43 @@
                     </div>
                     <div class="flex-grow">
                         <h2 class="dark:text-white  text-gray-900 text-xl title-font font-medium mb-3">Convert</h2>
-                        <p class="leading-relaxed text-lg">In case you cant measure it in cm, there is converter at the
+                        <p class="leading-relaxed text-lg">In case you can not measure it in cm, there is converter at the
                             bottom</p>
                     </div>
                 </div>
             </div>
-            <a href="/start_pages/size_converter" style="width: 100px;"
-                class="flex mx-auto mt-16 text-white bg-[#FA4646] border-0 py-2 px-8 hover:bg-red-500 rounded-lg text-lg">Next</a>
+
+            <div id="collapse3" style="display:none" class=" flex justify-center mt-20">
+                <div class="flex flex-col flex justify-between dark:bg-[#454547] md:w-1/4 sm:w-full xs:w-full bg-white w-1/4 p-5 h-[190px] rounded-3xl">
+
+                    <div class="">
+                        <label class='dark:text-zinc-200' for="inputInches">Inches:</label>
+                        <input id="inputInches" class="mt-1 bg-zinc-100 text-gray-900 dark:text-zinc-200 text-sm rounded-lg focus:ring-blue-500 border-transparent block w-full p-2.5 dark:bg-[#323232] dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " type="number"
+                            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                    </div>
+                    <div class="">
+                        <label class='dark:text-zinc-200' for="inputcm">Cm:</label>
+                        <input id="inputcm" class=" mt-1 bg-zinc-100 text-gray-900 dark:text-zinc-200 text-sm rounded-lg focus:ring-blue-500 border-transparent block w-full p-2.5 dark:bg-[#323232] dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 " type="number"
+                            oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mx-auto mt-[90px] flex items-center flex-col">
+                <a href="/start_pages/size_converter"
+                    class="flex justify-center w-[220px] block bg-[#FA4646] mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Next</a>
+
+                <a id="dark2" href="#collapse3" id="toggle" class="nav-link dark:text-zinc-300 text-zinc-700 text-sm hover:text-blue-500 cursor-pointer">
+                    Need a
+                    converter?
+                    Click on me
+                </a>
+
+            </div>
         </div>
     </section>
+
+    <script src="{{ asset('js/converter.js') }}"></script>
 
 @endsection

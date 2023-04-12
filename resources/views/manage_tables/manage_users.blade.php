@@ -3,7 +3,7 @@
 
 
     @role('Admin')
-    <div class="pt-[352px] pb-[534px] flex justify-center">
+    <div class="py-[406.5px] flex justify-center">
         <div class="dark:shadow-xl shadow-lg rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
             <div class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 flex items-center justify-between">
                 <div class='py-3'>
