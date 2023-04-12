@@ -4,8 +4,8 @@
 
     @role('Admin')
     <div class="pt-[352px] pb-[534px] flex justify-center">
-        <div class=" w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
-            <div class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 rounded-t-3xl flex items-center justify-between">
+        <div class="dark:shadow-xl shadow-lg rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+            <div class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 flex items-center justify-between">
                 <div class='py-3'>
                     <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown"
                         class="mx-5 py-3 dark:text-white text-black bg-transparent focus:outline-none text-2xl font-medium rounded-lg px-4 py-2.5 text-center inline-flex items-center"
@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="shadow-md relative overflow-x-auto shadow-md rounded-b-3xl">
+            <div class=" relative overflow-x-auto">
                 <table class="dark:bg-[#454547] bg-[#ffffff] w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="shadow-xl shadow-[#0000000a] dark:shadow-[#00000017] text-xs text-gray-700 uppercase dark:text-gray-400">
                         <tr>
@@ -55,6 +55,8 @@
                                     {{ $itemm->name }}</td>
                                 <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $itemm->foot_size_cm }}</td>
+
+
                                 <td
                                     class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex flex-col">
                                     <div class="stails">

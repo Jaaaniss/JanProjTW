@@ -36,7 +36,12 @@ Route::get('/auth/user/user_profile', function () {
     return view('/auth/user/user_profile');
 });
 
+Route::get('/auth/user/self-delete-success', function () {
+    return view('/auth/user/self-delete-success');
+});
+
 // Paroles mainisanai
+
 Route::get('auth/user/user_profile', [HomeController::class, 'changePassword'])->name('change-password');
 Route::post('auth/user/user_profile', [HomeController::class, 'updatePassword'])->name('update-password');
 
@@ -57,9 +62,13 @@ Route::POST('/enter_size',[SizeController::class,'insert']);
 Route::get('view-records','StudViewController@index');
 
 
-// Updates users data in profile page
+Route::middleware(['auth'])->group(function () {
+
+    Route::delete('self-delete', [DestroyController::class, 'destroy_user_from_profile']);
+
     Route::put('update_user/{id}', [UpdateController::class, 'update_profile']);
 
+});
 
 Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
 

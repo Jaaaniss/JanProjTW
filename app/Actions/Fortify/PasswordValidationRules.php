@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Actions\Fortify;
+use Illuminate\Validation\Rules\Password;
 
-use Laravel\Fortify\Rules\Password;
+// use Laravel\Fortify\Rules\Password;
 
 trait PasswordValidationRules
 {
@@ -13,6 +14,6 @@ trait PasswordValidationRules
      */
     protected function passwordRules(): array
     {
-        return ['required', 'string', new Password, 'confirmed'];
+        return [Password::min(8)->mixedCase()];
     }
 }

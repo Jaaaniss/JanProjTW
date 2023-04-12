@@ -17,7 +17,7 @@
             </div>
 
         <div class="2 w-full flex justify-center py-10 items-center bg-[#eeeeee] dark:bg-[#323232]">
-            <div id="bladess" class="w-1/2 flex justify-center py-10 items-center bg-transparent">
+            <div id="bladess" class="w-full flex justify-center p-10 items-center bg-transparent">
                 <div class="w-[400px] bg-transparent">
                     <h1 class="dark:text-white text-gray-800 font-bold text-2xl mb-1">Register</h1>
                     <p class="dark:text-zinc-300 text-sm font-normal text-gray-600 mb-7">Welcome</p>
@@ -115,15 +115,29 @@
                         </div>
 
                         @error('password')
-                            <span style="position: absolute;" class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+
+                        <div class="flex p-4 my-4 text-sm text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#4a4a4c] dark:text-red-400 dark:border-red-800" role="alert">
+                            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium" role="alert">
+                                    {{ $message }}
+                                </span>
+                            </div>
+                          </div>
+
                         @enderror
 
                         @error('email')
-                            <span style="position: absolute;" class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <div class="flex p-4 my-4 text-sm text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#4a4a4c] dark:text-red-400 dark:border-red-800" role="alert">
+                            <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
+                            <span class="sr-only">Info</span>
+                            <div>
+                                <span class="font-medium" role="alert">
+                                    {{ $message }}
+                                </span>
+                            </div>
+                          </div>
                         @enderror
 
 

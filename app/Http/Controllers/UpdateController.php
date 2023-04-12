@@ -8,6 +8,7 @@ use App\Models\Nike;
 use App\Models\User;
 use App\Models\Vans;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateController extends Controller {
 
@@ -49,9 +50,9 @@ class UpdateController extends Controller {
         return redirect('manage_tables/manage_users')->with('status','User Updated Successfully');
     }
 
-    public function update_profile(Request $request, $id)
+    public function update_profile(Request $request)
     {
-        $profile = User::find($id);
+        $profile = User::find(Auth::id());
         $profile->name = $request->input('name');
         $profile->email = $request->input('email');
         $profile->foot_size_cm = $request->input('foot_size_cm');

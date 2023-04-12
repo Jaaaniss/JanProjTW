@@ -18,9 +18,9 @@
                 </div>
             </div>
             <div class="dark:text-zinc-300 justify-center flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
-                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                <div class="break-normal mx-6 bg-[#ffffff1f] rounded-2xl shadow-box-shadow dark:shadow-2xl p-4 md:w-1/4 sm:w-full xs:w-full flex flex-col text-center items-center">
                     <div
-                        class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-red-100 dark:bg-[#4a4a4c] text-red-500 mb-5 flex-shrink-0">
+                        class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-red-100 dark:bg-[#323232] text-red-500 mb-5 flex-shrink-0">
                         <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAACXBIWXMAAAsTAAALEwEAmpwYAAADbklEQVR4nO2YTWhUVxTHb4qVKpUqJepCiq0tuixEZBbqA+f+/+81iWm7yKZWKFi6atGVQkCioEYQF10VUXBRsFgoxWoptSIl0A+1i/qBdFPspov6rcTMnBv1ljO5iRPzxryJ42RG5g8HZh7v3vu7551777nHmBpKyM8F+MlZ2+c7OxebZpCQtxzp1YQsOGCrN6bNNDw08KcAHzny7zCBQw0NrtBC/qa/fU/PPCF/DOCfmmaAVvkoetkBV/S5t/YV0wzQpWfApuDtT0yzQPt8/lUhHzryK9Ms0KXnwB0BBk1TQZPXhDxnGlEt6Hqp5enn1tOFJFk2Esc2qzlrI9/bO3usve/qWqD7sZDf1wXajw7oxjK0rCbAvlJ7Y9o0LQ3Pt6RBO+AfPRWzmlj78QjZ7detW5Tu5TheGtLJ3x25bSoTYFcAvCDk/tBO/1/0udycx/t3jzK+qi0484g6Nh0a+CLTl+nsXPyYx+874KhPkva094vkCgF6qzVHfibAL6VxgG9rAi3AcQHe9lE03zwjeQ09YFDXi2aNTw3tyMOmDhLgBx1vQojMFLTv6lrgyI5KViTf07ALsf3zhMYzBS3kuYy71Nl7SbKkIaBHrM0LsDfVdAsF/grjHJvUuFFj2kfRLAFO6FgF4PWmgFYJMFAay9qcKdeMLcT+/hd0MaZZicnazQLcFeCG7+6e2xDQotWoqU/E2yPAO5MazyD0Jkd+nWLfCXA1MJ1MLfZUgi6Qb2qhpQi8r5+y1tBPkoaDA74J8bw6E7SL4zVCDpd9qmNjM67XQpQ43hhCZEMmaM2LBXigdTkhT4UZr6wHtDemzZGrHHBJGYpxvDwbNHBaK5+aEClcyLTW1gJagA+F/E+Am6lGDpUtxN2pnVTw9AcTVjJwfuymUp7laY4w6YidQkVgvR7NjvxjggHnSyXiUdiHxTh+t2InlRaibjWOPCjAjvIMKyWffqA3DVMD+VxuzvgtyNq+qqErdvwI+oLmCY78t6bgSdIe+j8yJbQjLzvyQAb7sjymi9a+VQLXiy0woLXpaQN3dLwo5J7gxJ2VXxwtgN+u+g4HbB+feJIsC5PWeBwW4IyeeFXaoB7Zoe8rHlj45Bn29Mwr5PNvZLVha1+b1EcUvRTyhV+FvD6NS+yQLkZH9muJeLpfq6WWWmrpOdL/z9GaigVpk2QAAAAASUVORK5CYII=">
                     </div>
@@ -29,9 +29,9 @@
                         <p class="leading-relaxed text-lg">If you do know, then click button "next" to select a size</p>
                     </div>
                 </div>
-                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                <div class="break-normal mx-6 bg-[#ffffff1f] rounded-2xl shadow-box-shadow dark:shadow-2xl p-4 md:w-1/4 sm:w-full xs:w-full flex flex-col text-center items-center">
                     <div
-                        class="w-20 h-20 inline-flex items-center justify-center rounded-full dark:bg-[#4a4a4c]  bg-red-100 text-red-500 mb-5 flex-shrink-0">
+                        class="w-20 h-20 inline-flex items-center justify-center rounded-full dark:bg-[#323232]  bg-red-100 text-red-500 mb-5 flex-shrink-0">
                         <img
                             src="data:image/png;base64,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">
                     </div>
@@ -41,9 +41,9 @@
                             cm)</p>
                     </div>
                 </div>
-                <div class="p-4 md:w-1/3 flex flex-col text-center items-center">
+                <div class="break-normal mx-6 bg-[#ffffff1f] rounded-2xl shadow-box-shadow dark:shadow-2xl p-4 md:w-1/4 sm:w-full xs:w-full flex flex-col text-center items-center">
                     <div
-                        class="w-20 h-20 inline-flex items-center justify-center rounded-full dark:bg-[#4a4a4c]  bg-red-100 text-red-500 mb-5 flex-shrink-0">
+                        class="w-20 h-20 inline-flex items-center justify-center rounded-full dark:bg-[#323232]  bg-red-100 text-red-500 mb-5 flex-shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="45" height="45"
                             viewBox="0,0,256,256" style="fill:#FA4646;">
                             <g fill="#FA4646" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
@@ -69,4 +69,5 @@
                 class="flex mx-auto mt-16 text-white bg-[#FA4646] border-0 py-2 px-8 hover:bg-red-500 rounded-lg text-lg">Next</a>
         </div>
     </section>
+
 @endsection

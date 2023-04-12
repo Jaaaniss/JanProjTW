@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <a href="{{ url('/manage_tables/add/add') }}"
-                    class="w-[150px] flex justify-center mx-5 py-3 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    class="w-[150px] flex justify-center mx-5 py-3 text-white dark:text-black bg-gray-800 dark:bg-white dark:hover:bg-zinc-200 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                     type="button">Add size</a>
             </div>
 

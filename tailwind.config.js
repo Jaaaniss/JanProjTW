@@ -31,7 +31,9 @@ module.exports = {
         //     'dark-mode-background': '#323232',
         //     'dark-mode-object': '#4a4a4c',
         //   },
-        extend: {},
+        extend: {
+            boxShadow: {'box-shadow': '0 4px 30px rgba(0, 0, 0, 0.1)',}
+        },
 
     },
     plugins: [

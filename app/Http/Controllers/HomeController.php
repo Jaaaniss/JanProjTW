@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Hash;
 class HomeController extends Controller
 {
 
+    public function index()
+    {
+        $user=User::all();
+        return view('/auth/user/user_profile',compact('user'));
+    }
     public function changePassword()
 
     {
