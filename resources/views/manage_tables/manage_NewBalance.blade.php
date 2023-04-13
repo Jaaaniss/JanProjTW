@@ -3,7 +3,50 @@
 
 
     @role('Admin')
-    <div class="py-[200px] flex justify-center">
+    <div class="py-[200px] flex flex-col items-center">
+
+                <!-- Breadcrumb -->
+                <nav class="mb-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto flex px-5 py-3 dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg rounded-3xl"
+                aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li class="inline-flex items-center">
+                        <a href="/"
+                            class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                                </path>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Manage tables</span>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">New Balance</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+
+
         <div class=" w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
             <div class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 rounded-t-3xl flex items-center justify-between">
                 <div class='py-3'>
@@ -17,19 +60,19 @@
                         class="z-10 hidden bg-zinc-200 divide-y divide-zinc-100 rounded-lg shadow w-44 dark:bg-zinc-800">
                         <ul class="py-2 text-sm text-zinc-700 dark:text-zinc-200" aria-labelledby="dropdownDefaultButton">
                             <li>
-                                <a href="{{ url('manage_tables/manage_vans') }}"
+                                <a href="{{ url('manage_tables/manage_Vans') }}"
                                     class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Vans</a>
                             </li>
                             <li>
-                                <a href="{{ url('manage_tables/manage_nike') }}"
+                                <a href="{{ url('manage_tables/manage_Nike') }}"
                                     class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Nike</a>
                             </li>
                             <li>
-                                <a href="{{ url('manage_tables/manage_adidas') }}"
+                                <a href="{{ url('manage_tables/manage_Adidas') }}"
                                     class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Adidas</a>
                             </li>
                             <li>
-                                <a href="{{ url('manage_tables/manage_users') }}"
+                                <a href="{{ url('manage_tables/manage_Users') }}"
                                     class="block px-4 py-2 hover:bg-zinc-100 dark:hover:bg-zinc-600 dark:hover:text-white">Users</a>
                             </li>
                         </ul>
@@ -69,9 +112,9 @@
                                 <td
                                     class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white  flex flex-col">
                                     <div class="stails">
-                                        <a href="{{ url('manage_tables/edit/edit/' . $item4->id . '/nb') }}"
+                                        <a href="{{ url('manage_tables/edit/edit/' . $item4->id . '/NewBalance') }}"
                                             class="font-bold text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                        <form action="{{ url('delete/' . $item4->id . '/nb') }}" method="POST">
+                                        <form action="{{ url('delete/' . $item4->id . '/NewBalance') }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="font-bold dark:text-red-500 text-red-500 hover:underline">Remove</button>

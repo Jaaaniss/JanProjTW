@@ -49,35 +49,35 @@ class VansController extends Controller {
     public function vans3()
     {
         $vans = vans::all();
-        return view('manage_tables/manage_vans',['vans'=>$vans]);
+        return view('manage_tables/manage_Vans',['vans'=>$vans]);
     }
 
 
     public function nike3()
     {
         $nike = nike::all();
-        return view('manage_tables/manage_nike',['nike'=>$nike]);
+        return view('manage_tables/manage_Nike',['nike'=>$nike]);
     }
 
 
     public function adidas3()
     {
         $adidas = adidas::all();
-        return view('manage_tables/manage_adidas',['adidas'=>$adidas]);
+        return view('manage_tables/manage_Adidas',['adidas'=>$adidas]);
     }
 
 
     public function newbalance3()
     {
         $newbalance = NewBalance::all();
-        return view('manage_tables/manage_nb',['newbalance'=>$newbalance]);
+        return view('manage_tables/manage_NewBalance',['newbalance'=>$newbalance]);
     }
 
 
     public function users3()
     {
         $userr = User::all();
-        return view('manage_tables/manage_users',['userr'=>$userr]);
+        return view('manage_tables/manage_Users',['userr'=>$userr]);
     }
 
 }

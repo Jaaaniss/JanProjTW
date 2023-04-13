@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div id="collapse3" style="display:none" class=" flex justify-center mt-20">
+            <div id="converter" style="display:none" class=" flex justify-center mt-20">
                 <div class="flex flex-col flex justify-between dark:bg-[#454547] md:w-1/4 sm:w-full xs:w-full bg-white w-1/4 p-5 h-[190px] rounded-3xl">
 
                     <div class="">
@@ -87,7 +87,7 @@
                 <a href="/start_pages/size_converter"
                     class="flex justify-center w-[220px] block bg-[#FA4646] mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Next</a>
 
-                <a id="dark2" href="#collapse3" id="toggle" class="nav-link dark:text-zinc-300 text-zinc-700 text-sm hover:text-blue-500 cursor-pointer">
+                <a id="dark2" href="#converter" id="toggle" class="nav-link dark:text-zinc-300 text-zinc-700 text-sm hover:text-blue-500 cursor-pointer">
                     Need a
                     converter?
                     Click on me

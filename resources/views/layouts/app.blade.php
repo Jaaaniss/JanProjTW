@@ -90,12 +90,12 @@
                             @auth
                                 <div class="flex items-center md:order-2">
                                     <button type="button"
-                                        class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                                        class="flex mr-3 text-sm rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                         id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown"
                                         data-dropdown-placement="bottom">
                                         <span class="sr-only">Open user menu</span>
-                                        <img class="w-8 h-8 rounded-full"
-                                            src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png"
+                                        <img class="dark:invert w-8 h-8 rounded-full"
+                                        src="{{ asset('/image/profile.png') }}"
                                             alt="user photo">
                                     </button>
                                     <!-- Dropdown menu -->
@@ -110,7 +110,7 @@
                                         <ul class="py-2" aria-labelledby="user-menu-button">
                                             @if (Auth::user()->id == 1)
                                                 <li>
-                                                    <a href="/manage_tables/manage_vans"
+                                                    <a href="/manage_tables/manage_Vans"
                                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
                                                 </li>
                                             @endif

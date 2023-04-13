@@ -22,16 +22,16 @@ class AddController extends Controller
     {
         $item = null;
         switch ($request->company) {
-            case 'vans':
+            case 'Vans':
                 $item = new Vans;
                 break;
-            case 'adidas':
+            case 'Adidas':
                 $item = new Adidas;
                 break;
-            case 'nike':
+            case 'Nike':
                 $item = new Nike;
                 break;
-            case 'nb':
+            case 'NewBalance':
                 $item = new NewBalance;
                 break;
         }

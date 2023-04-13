@@ -67,11 +67,11 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
 
-    Route::get('/manage_tables/manage_vans', [VansController::class, 'vans3']);
-    Route::get('/manage_tables/manage_nike', [VansController::class, 'nike3']);
-    Route::get('/manage_tables/manage_adidas', [VansController::class, 'adidas3']);
-    Route::get('/manage_tables/manage_nb', [VansController::class, 'newbalance3']);
-    Route::get('/manage_tables/manage_users', [VansController::class, 'users3']);
+    Route::get('/manage_tables/manage_Vans', [VansController::class, 'vans3']);
+    Route::get('/manage_tables/manage_Nike', [VansController::class, 'nike3']);
+    Route::get('/manage_tables/manage_Adidas', [VansController::class, 'adidas3']);
+    Route::get('/manage_tables/manage_NewBalance', [VansController::class, 'newbalance3']);
+    Route::get('/manage_tables/manage_Users', [VansController::class, 'users3']);
 
     Route::get('/manage_tables/add/add', [AddController::class, 'create']);
     Route::post('/manage_tables/add/add', [AddController::class, 'storeAnything']);

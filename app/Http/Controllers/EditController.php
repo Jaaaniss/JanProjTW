@@ -15,16 +15,16 @@ class EditController extends Controller
     {
         $item = null;
         switch ($company) {
-            case 'vans':
+            case 'Vans':
                 $item = Vans::find($id);
                 break;
-            case 'adidas':
+            case 'Adidas':
                 $item = Adidas::find($id);
                 break;
-            case 'nike':
+            case 'Nike':
                 $item = Nike::find($id);
                 break;
-            case 'nb':
+            case 'NewBalance':
                 $item = NewBalance::find($id);
                 break;
         }

@@ -17,16 +17,16 @@ class UpdateController extends Controller {
 
         $item = null;
         switch ($company) {
-            case 'vans':
+            case 'Vans':
                 $item = Vans::find($id);
                 break;
-            case 'adidas':
+            case 'Adidas':
                 $item = Adidas::find($id);
                 break;
-            case 'nike':
+            case 'Nike':
                 $item = Nike::find($id);
                 break;
-            case 'nb':
+            case 'NewBalance':
                 $item = NewBalance::find($id);
                 break;
         }
@@ -47,7 +47,7 @@ class UpdateController extends Controller {
         $userr->name = $request->input('name');
         $userr->foot_size_cm = $request->input('foot_size_cm');
         $userr->update();
-        return redirect('manage_tables/manage_users')->with('status','User Updated Successfully');
+        return redirect('manage_tables/manage_Users')->with('status','User Updated Successfully');
     }
 
     public function update_profile(Request $request)

@@ -2,6 +2,52 @@
 @section('content')
 
 
+<div
+            class="py-[250px] dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
+
+            <div class=" border-b-[1px] dark:border-zinc-500 border-zinc-200 px-8 py-4">
+                <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
+                    Delete Account
+                </h2>
+            </div>
+
+            <div class=" px-8 pb-8 pt-1 ">
+
+
+                <div class="mt-4 space-y-4 lg:mt-5 md:space-y-5">
+
+                    <div>
+                        <label for="name" class="block mb-2 text-md font-medium text-gray-900 dark:text-white">
+                            Once your account is deleted, all of its resources and data will be permanently deleted. Before
+                            deleting your account, please download any data or information that you wish to retain.
+                        </label>
+
+
+                        <form action="{{ url('self-delete') }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-4 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Permanently
+                                Delete</button>
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
         <div style="display: flex;align-items: center;justify-content: center;height: 100%;" class="py-[250px] container">
 
             <div class="lielaiscontainer">
