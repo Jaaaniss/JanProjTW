@@ -5,11 +5,11 @@
     <section class="pt-[236px] pb-[236px] text-gray-600 body-font">
         <div class="px-5">
             <div class="text-center mb-[90px]">
-                <div class="dark:invert flex justify-center ">
+                <div class="dark:invert flex justify-center">
                     <img id="imgg" height="200px" width="200px" src="{{ asset('/image/LOGO.png') }}"
                         style="transform: scaleX(-1);">
                 </div>
-                <h1 class="dark:text-white sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 mt-2"> Would you
+                <h1 class="dark:text-white sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4 mt-2">Would you
                     like to know your international shoe size? </h1>
                 <p class="dark:text-zinc-300  text-xl leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">Do you know
                     how long is your feet in centimeters?</p>
