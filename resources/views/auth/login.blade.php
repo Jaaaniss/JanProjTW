@@ -29,7 +29,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                             </svg>
-                            <input name="email" type="email" class="dark:autofill:text-white dark:autofill:shadow-[inset_0_0_0px_1000px_rgb(74,74,76)] autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none"
+                            <input name="email" type="email" class=" border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none"
                                 id="Emaill" placeholder="email@example.com" required autocomplete="email"
                                 value="{{ old('email') }}" autofocus>
                         </div>
@@ -43,7 +43,7 @@
                                     d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
                                     clip-rule="evenodd" />
                             </svg>
-                            <input name="password" type="password" class="dark:autofill:shadow-[inset_0_0_0px_1000px_rgb(74,74,76)] autofill:shadow-[inset_0_0_0px_1000px_rgb(255,255,255)] border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none"
+                            <input name="password" type="password" class=" border-transparent focus:border-transparent focus:ring-0 bg-transparent pl-2 outline-none border-none"
                                 id="Passwordd" placeholder="Password" required autocomplete="current_password" autofocus>
                         </div>
 
