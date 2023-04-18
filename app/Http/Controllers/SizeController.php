@@ -10,11 +10,11 @@ use Symfony\Component\Console\Output\ConsoleOutput;
 class SizeController extends Controller
 {
         public function insert(Request $request){
-            
+
             $size = $request->foot_size_cm;
             $data=array('foot_size_cm'=>$size);
             DB::table('users')->where("id",Auth::user()->id)->update($data);
-            return back();
+            return redirect('start_pages/size_converter');
     }
 }
 

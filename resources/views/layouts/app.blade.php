@@ -19,19 +19,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/tailwind.css') }}">
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    {{-- <script src="../path/to/flowbite/dist/flowbite.min.js"></script> --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
     <link
     href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
     rel="stylesheet">
 
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 
-    <title>JSneaks</title>
+    <title>Website</title>
 
     @vite('resources/css/app.css')
 
-    <title>JSneaks</title>
 </head>
 
 <body>
@@ -109,19 +116,19 @@
                                                 class="block text-sm  text-zinc-500 truncate dark:text-zinc-300">{{ Auth::user()->email }}</span>
                                         </div>
                                         <ul class="py-2" aria-labelledby="user-menu-button">
-                                            @if (Auth::user()->email == 'Admin@Admin.Admin')
+                                            @role('Admin')
                                                 <li>
                                                     <a href="/manage_tables/manage_Vans"
                                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
                                                 </li>
-                                            @endif
+                                            @endrole
                                             <li>
                                                 <a href="/auth/user/user_profile"
                                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
                                             </li>
                                             <li>
-                                                <a href="/search_size"
-                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Search your size') }}</a>
+                                                <a href="/check-size"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Edit your size') }}</a>
                                             </li>
                                             <li>
                                                 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white"

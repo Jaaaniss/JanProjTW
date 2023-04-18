@@ -13,7 +13,7 @@ class StudViewController extends Controller {
    public function index() {
 
       $users = FacadesDB::select('select * from users');
-      return view('search_size',['users'=>$users]);
+      return view('check-size',['users'=>$users]);
 
    }
 }

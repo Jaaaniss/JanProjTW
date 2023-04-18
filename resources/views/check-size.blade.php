@@ -28,7 +28,7 @@
                                 d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                 clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Search your
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Edit your
                             size</span>
                     </div>
                 </li>
@@ -42,7 +42,7 @@
 
             <div class=" border-b-[1px] dark:border-zinc-500 border-zinc-200 px-8 py-4">
                 <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">
-                    Search your size
+                    Edit your size
                 </h2>
             </div>
 
@@ -79,30 +79,6 @@
                                 </div>
                             </form>
                         </div>
-
-                        <div class="mt-3">
-                            <form>
-                                <label for="search"
-                                    class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                            fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                        </svg>
-                                    </div>
-                                    <input type="search" id="search"
-                                        class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="Search" required>
-                                    <button type="submit"
-                                        class="text-white dark:text-black absolute right-2.5 bottom-2.5 bg-black hover:bg-zinc-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-white dark:hover:bg-zinc-200">Search</button>
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
                 </div>
 
             </div>

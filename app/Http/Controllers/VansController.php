@@ -31,7 +31,7 @@ class VansController extends Controller {
         if (Auth::user()->foot_size_cm == null) {
             return view('enter_size',['vans'=>$vans,'nike'=>$nike,'adidas'=>$adidas, 'newbalance'=>$newbalance]);
         } else {
-           return redirect("/search_size");
+           return redirect("/check-size");
         }
     }
 

@@ -28,8 +28,8 @@ Route::get('/', function () {
     return view('/start_pages/sakums');
 });
 
-Route::get('/search_size', function () {
-    return view('search_size');
+Route::get('/check-size', function () {
+    return view('check-size');
 });
 
 Route::get('/auth/user/user_profile', function () {
