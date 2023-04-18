@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="pt-[200px] pb-[220px] flex flex-col items-center ">
+    <div class="pt-[200px] pb-[492px] flex flex-col items-center ">
 
 
 
@@ -51,27 +51,27 @@
 
                 <div class="mt-4 space-y-4 lg:mt-5 md:space-y-5">
 
-                    <div>
+                    <div class="flex align-center flex-col">
 
-                        <p class="mb-5 text-lg dark:text-white">
+                        <label class="flex justify-center block my-3 text-lg font-medium text-gray-900 dark:text-white">
                             Your saved foot size is {{ auth()->user()->foot_size_cm }}cm
-                        </p>
-
-                        <label for="name" class="block mb-5 text-md font-medium text-gray-900 dark:text-white">
-                            Seit varetu ievadit savu izmeru, dzimti, zimolu un meklet veikalus kados ir tas izmers
                         </label>
+
+                        {{-- <label for="name" class="block mb-5 text-md font-medium text-gray-900 dark:text-white">
+                            Edit your size by entering a number and clicking 'Enter' and view sizing page
+                        </label> --}}
 
 
                         <div>
                             <form action="/enter_size" method="post">
                                 @csrf
                                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Foot
+                                    Edit foot
                                     size
                                     (cm)
                                 </label>
                                 <div class="relative">
-                                    <input id="sizeinput" max="1000" name="foot_size_cm" type="number"
+                                    <input id="sizeinput" max="40" name="foot_size_cm" type="text"
                                         class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Enter a number">
                                     <button type="submit"

@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="pt-[300px] pb-[350px] flex flex-col items-center ">
+<div class="pt-[200px] pb-[548px] flex flex-col items-center ">
 
 
 
@@ -53,9 +53,8 @@
             <div class="mt-4 space-y-4 lg:mt-5 md:space-y-5">
 
                 <div>
-                    <label for="name" class="block mb-5 text-md font-medium text-gray-900 dark:text-white">
-                        Te var ierakstit izmeru tikai lai to saglabatu, bet var arii meklet internetaa kurpes
-                                    pec taa izmera
+                    <label for="name" class="flex justify-center block mb-5 text-lg font-medium text-gray-900 dark:text-white">
+                        Save your size by clicking 'Enter' and view sizing page
                     </label>
 
 
@@ -72,8 +71,6 @@
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
 

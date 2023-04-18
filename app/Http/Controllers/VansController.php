@@ -16,9 +16,21 @@ class VansController extends Controller {
 
     public function index($size)
     {
-        $time = DB::table("vans")
-            ->where('cm',$size);
-        return response()->json(array('data' => $time->get()));
+
+        $list = Vans::where('cm',$size)->get();
+        $closest = null;
+        $using_closest = false;
+
+        if (!count($list)) {
+            $list = Vans::pluck('cm');
+            foreach ($list as $item) {
+                if ($closest === null || abs($size - $closest) > abs($item - $size)) {
+                    $closest = $item;
+                }
+            }
+            $list = Vans::where('cm',$closest)->get();
+        }
+        return response()->json(array('data' => $list));
     }
 
     public function vans2(){
