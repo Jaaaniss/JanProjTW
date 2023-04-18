@@ -3,6 +3,38 @@
     <div class="py-[200px] flex flex-col items-center ">
 
 
+        <!-- Alerti -->
+        <div class=" mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+            @if (session('status'))
+                <div class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
+                    role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div>
+                        {{ session('status') }}
+                    </div>
+                </div>
+            @elseif (session('error'))
+                <div class="mb-2 flex p-4 text-sm text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#454547] dark:text-red-400 dark:border-red-800"
+                    role="alert">
+                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="sr-only">Info</span>
+                    <div>
+                        {{ session('error') }}
+                    </div>
+                </div>
+            @endif
+        </div>
 
         <!-- Breadcrumb -->
         <nav class="mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto flex px-5 py-3 dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg rounded-3xl"
@@ -33,39 +65,6 @@
                 </li>
             </ol>
         </nav>
-
-        <!-- Alerti -->
-        <div class=" mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
-            @if (session('status'))
-                <div class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
-                    role="alert">
-                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Info</span>
-                    <div>
-                        {{ session('status') }}
-                    </div>
-                </div>
-            @elseif (session('error'))
-                <div class="mb-2 flex p-4 text-sm text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#454547] dark:text-red-400 dark:border-red-800"
-                    role="alert">
-                    <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor"
-                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="sr-only">Info</span>
-                    <div>
-                        {{ session('error') }}
-                    </div>
-                </div>
-            @endif
-        </div>
 
         <!-- User Information -->
         <div
@@ -123,7 +122,8 @@
         </div>
 
         <!-- User password change -->
-        <div class="dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
+        <div
+            class="dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
 
             <div class=" border-b-[1px] dark:border-zinc-500 border-zinc-200 px-8 py-4">
                 <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white">

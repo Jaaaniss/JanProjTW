@@ -14,7 +14,7 @@
             <img class="object-cover h-full w-full relative overflow-hidden md:flex justify-around items-center hidden"
                 src="{{ asset('/image/wallpaper_jordan.jpg') }}" alt="">
         </div>
-        <div class="2 w-full flex justify-center py-10 items-center bg-[#eeeeee] dark:bg-[#323232]">
+        <div class="w-full flex justify-center py-10 items-center bg-[#eeeeee] dark:bg-[#323232]">
             <div id="bladess" class=" w-full flex justify-center p-10 items-center bg-transparent">
                 <div class="w-[400px] bg-transparent">
                     <h1 class="dark:text-white text-gray-800 font-bold text-2xl mb-1">Login</h1>
