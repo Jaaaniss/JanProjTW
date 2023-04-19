@@ -66,7 +66,7 @@
             </nav>
 
 
-
+            <!-- Table div -->
             <div class=" w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
                 <div
                     class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 rounded-t-3xl flex items-center justify-between">
@@ -150,6 +150,7 @@
                     </table>
                 </div>
             </div>
+
         </div>
     @endrole
 @endsection

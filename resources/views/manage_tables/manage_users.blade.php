@@ -65,6 +65,7 @@
                 </ol>
             </nav>
 
+            <!-- Table div -->
             <div
                 class="dark:shadow-xl shadow-lg rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
                 <div
@@ -139,6 +140,7 @@
                     </table>
                 </div>
             </div>
+            
         </div>
     @endrole
 

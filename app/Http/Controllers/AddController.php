@@ -36,6 +36,7 @@ class AddController extends Controller
                 break;
         }
 
+
         $item->cm = $request->input('CM');
         $item->eu = $request->input('EU');
         $item->uk = $request->input('UK');
