@@ -10,9 +10,21 @@ class AdidasController extends Controller {
 
     public function index($size)
     {
-        $time = DB::table("adidas")
-        ->where("cm",$size);
-        return response()->json(array('data' => $time->get()));
+
+        $list = Adidas::where('cm',$size)->get();
+        $closest = null;
+        $using_closest = false;
+
+        if (!count($list)) {
+            $list = Adidas::pluck('cm');
+            foreach ($list as $item) {
+                if ($closest === null || abs($size - $closest) > abs($item - $size)) {
+                    $closest = $item;
+                }
+            }
+            $list = Adidas::where('cm',$closest)->get();
+        }
+        return response()->json(array('data' => $list));
     }
 
 }

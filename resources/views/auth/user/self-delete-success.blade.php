@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
-    <div class="py-[200px] flex justify-center">
+
+    <!-- Acc deletion alert -->
+    <div class="mx-5 py-[200px] flex justify-center">
 
 
         @if (session('status'))
@@ -33,5 +35,5 @@
             </div>
         @endif
     </div>
-    </div>
+
 @endsection

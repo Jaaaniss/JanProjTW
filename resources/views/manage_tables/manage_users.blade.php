@@ -3,7 +3,7 @@
 
 
     @role('Admin')
-        <div class="pt-[310px] pb-[410px] flex flex-col items-center">
+        <div class="mx-5 pt-[200px] pb-[610px] flex flex-col items-center">
 
             <!-- Alerti -->
             <div class=" mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">

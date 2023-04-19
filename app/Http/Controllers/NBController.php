@@ -10,8 +10,19 @@ class NBController extends Controller {
 
     public function index($size)
     {
-        $time = DB::table("newbalance")
-            ->where("cm",$size);
-        return response()->json(array('data' => $time->get()));
+        $list = NewBalance::where('cm',$size)->get();
+        $closest = null;
+        $using_closest = false;
+
+        if (!count($list)) {
+            $list = NewBalance::pluck('cm');
+            foreach ($list as $item) {
+                if ($closest === null || abs($size - $closest) > abs($item - $size)) {
+                    $closest = $item;
+                }
+            }
+            $list = NewBalance::where('cm',$closest)->get();
+        }
+        return response()->json(array('data' => $list));
     }
 }

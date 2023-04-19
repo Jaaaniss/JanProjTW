@@ -48,7 +48,7 @@
                             class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:border-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
 
                             @auth
-                                <option value="{{ auth()->user()->foot_size_cm }}">Your entered size -
+                                <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
                                     {{ auth()->user()->foot_size_cm }}</option>
                             @endauth
 
@@ -160,10 +160,17 @@
                     <div class="selekts">
                         <select id="ident2"
                             class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
-                            @foreach ($nike as $value)
+                            @auth
+                                <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
+                                    {{ auth()->user()->foot_size_cm }}</option>
+                            @endauth
+
+                            @guest
                                 <option value="" disabled selected hidden>Select size</option>
-                                <option class="optioncolor" id="ident2" value="{{ $value->cm }}">
-                                    {{ $value->cm }}
+                            @endguest
+
+                            @foreach ($nike as $value)
+                                <option class="optioncolor" id="ident2" value="{{ $value->cm }}">{{ $value->cm }}
                                 </option>
                             @endforeach
                         </select>
@@ -263,10 +270,17 @@
                     <div class="selekts">
                         <select id="ident3"
                             class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
-                            @foreach ($adidas as $value)
+                            @auth
+                                <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
+                                    {{ auth()->user()->foot_size_cm }}</option>
+                            @endauth
+
+                            @guest
                                 <option value="" disabled selected hidden>Select size</option>
-                                <option class="optioncolor" id="ident3" value="{{ $value->cm }}">
-                                    {{ $value->cm }}
+                            @endguest
+
+                            @foreach ($adidas as $value)
+                                <option class="optioncolor" id="ident3" value="{{ $value->cm }}">{{ $value->cm }}
                                 </option>
                             @endforeach
                         </select>
@@ -366,10 +380,17 @@
                     <div class="selekts">
                         <select id="ident4"
                             class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
-                            @foreach ($newbalance as $value)
+                            @auth
+                                <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
+                                    {{ auth()->user()->foot_size_cm }}</option>
+                            @endauth
+
+                            @guest
                                 <option value="" disabled selected hidden>Select size</option>
-                                <option class="optioncolor" id="ident4" value="{{ $value->cm }}">
-                                    {{ $value->cm }}
+                            @endguest
+
+                            @foreach ($newbalance as $value)
+                                <option class="optioncolor" id="ident4" value="{{ $value->cm }}">{{ $value->cm }}
                                 </option>
                             @endforeach
                         </select>

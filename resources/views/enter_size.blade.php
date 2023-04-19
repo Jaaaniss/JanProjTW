@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="pt-[200px] pb-[548px] flex flex-col items-center ">
+<div class="mx-5 pt-[200px] pb-[548px] flex flex-col items-center ">
 
 
 
@@ -37,7 +37,7 @@
     </nav>
 
 
-    <!-- User account deletion -->
+    <!-- Enter size div -->
     <div
         class="dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
 
@@ -66,7 +66,7 @@
                                 (cm)
                             </label>
                             <div class="relative">
-                                <input id="sizeinput" max="40"  name="foot_size_cm" type="number" class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a number">
+                                <input id="sizeinput" type=number step=0.01 name="foot_size_cm" class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a number">
                                 <button type="submit" id="submitbutton" class="h-[30px] flex items-center bg-black dark:text-black text-white absolute right-2 bottom-2 dark:bg-white dark:hover:bg-zinc-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 hover:bg-zinc-700">Enter</button>
                             </div>
                         </form>
@@ -77,4 +77,5 @@
         </div>
 
     </div>
+
 @endsection

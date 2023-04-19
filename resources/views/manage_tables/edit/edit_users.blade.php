@@ -3,7 +3,7 @@
 
 
     @role('Admin')
-    <div class="py-[367.5px] flex flex-col items-center">
+    <div class="mx-5 pt-[200px] pb-[467px] flex flex-col items-center">
 
 
         <!-- Breadcrumb -->
@@ -72,7 +72,7 @@
                     </div>
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Foot size (cm)</label>
-                        <input type="number" name="foot_size_cm" value="{{ $userr->foot_size_cm }}"
+                        <input step=0.01 type="number" name="foot_size_cm" value="{{ $userr->foot_size_cm }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             >
                     </div>

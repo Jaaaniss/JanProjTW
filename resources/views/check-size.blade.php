@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="pt-[200px] pb-[492px] flex flex-col items-center ">
+    <div class="mx-5  pt-[200px] pb-[492px] flex flex-col items-center ">
 
 
 
@@ -36,7 +36,7 @@
         </nav>
 
 
-        <!-- User account deletion -->
+        <!-- Edit size div -->
         <div
             class="dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
 
@@ -71,7 +71,7 @@
                                     (cm)
                                 </label>
                                 <div class="relative">
-                                    <input id="sizeinput" max="40" name="foot_size_cm" type="text"
+                                    <input id="sizeinput" type=number step=0.01 name="foot_size_cm"
                                         class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Enter a number">
                                     <button type="submit"
@@ -84,4 +84,5 @@
             </div>
 
         </div>
+
     @endsection

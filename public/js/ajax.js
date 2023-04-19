@@ -3,7 +3,26 @@ $("#ident").on('change', function () {
     getsize();
 });
 
+
+$("#ident2").on('change', function () {
+    getsize2();
+});
+
+
+$("#ident3").on('change', function () {
+    getsize3();
+});
+
+
+$("#ident4").on('change', function () {
+    getsize4();
+});
+
+
 getsize();
+getsize2();
+getsize3();
+getsize4();
 
 function getsize() {
     var table = $("#ident").find(":selected").val();
@@ -30,9 +49,7 @@ function getsize() {
     })
 }
 
-
-
-$("#ident2").on('change', function () {
+function getsize2() {
     var table = $("#ident2").find(":selected").val();
     console.log(table);
     $.ajax({
@@ -55,10 +72,9 @@ $("#ident2").on('change', function () {
             console.log(errorMessage)
         }
     })
-});
+}
 
-
-$("#ident3").on('change', function () {
+function getsize3() {
     var table = $("#ident3").find(":selected").val();
     console.log(table);
     $.ajax({
@@ -81,10 +97,9 @@ $("#ident3").on('change', function () {
             console.log(errorMessage)
         }
     })
-});
+}
 
-
-$("#ident4").on('change', function () {
+function getsize4() {
     var table = $("#ident4").find(":selected").val();
     console.log(table);
     $.ajax({
@@ -107,4 +122,6 @@ $("#ident4").on('change', function () {
             console.log(errorMessage)
         }
     })
-});
+}
+
+
