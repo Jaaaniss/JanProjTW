@@ -23,6 +23,10 @@ class NBController extends Controller {
             }
             $list = NewBalance::where('cm',$closest)->get();
         }
-        return response()->json(array('data' => $list));
+
+        return response()->json([
+            'data' => $list,
+            'closest' => $closest,
+        ]);
     }
 }

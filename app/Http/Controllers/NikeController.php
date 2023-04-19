@@ -23,6 +23,10 @@ class NikeController extends Controller {
             }
             $list = Nike::where('cm',$closest)->get();
         }
-        return response()->json(array('data' => $list));
+
+        return response()->json([
+            'data' => $list,
+            'closest' => $closest,
+        ]);
     }
 }

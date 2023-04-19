@@ -1,23 +1,24 @@
 
+$("#warning-vans").hide();
+$("#warning-nike").hide();
+$("#warning-adidas").hide();
+$("#warning-newbalance").hide();
+
 $("#ident").on('change', function () {
     getsize();
 });
-
 
 $("#ident2").on('change', function () {
     getsize2();
 });
 
-
 $("#ident3").on('change', function () {
     getsize3();
 });
 
-
 $("#ident4").on('change', function () {
     getsize4();
 });
-
 
 getsize();
 getsize2();
@@ -32,6 +33,10 @@ function getsize() {
         url: "/vanssize/" + table,
         dataType: "json",
         success: function (data) {
+            if (data.closest > 0) {
+                $("#warning-vans").show();
+                $("#warning-vans").append(data.data[0].cm);
+            }
             $.each(data.data, function (key, val) {
                 uk = val.uk
                 eu = val.eu
@@ -57,6 +62,10 @@ function getsize2() {
         url: "/nikesize/" + table,
         dataType: "json",
         success: function (data) {
+            if (data.closest > 0) {
+                $("#warning-nike").show();
+                $("#warning-nike").append(data.data[0].cm);
+            }
             $.each(data.data, function (key, val) {
                 uk = val.uk
                 eu = val.eu
@@ -82,6 +91,10 @@ function getsize3() {
         url: "/adidassize/" + table,
         dataType: "json",
         success: function (data) {
+            if (data.closest > 0) {
+                $("#warning-adidas").show();
+                $("#warning-adidas").append(data.data[0].cm);
+            }
             $.each(data.data, function (key, val) {
                 uk = val.uk
                 eu = val.eu
@@ -107,6 +120,10 @@ function getsize4() {
         url: "/nbsize/" + table,
         dataType: "json",
         success: function (data) {
+            if (data.closest > 0) {
+                $("#warning-newbalance").show();
+                $("#warning-newbalance").append(data.data[0].cm);
+            }
             $.each(data.data, function (key, val) {
                 uk = val.uk
                 eu = val.eu

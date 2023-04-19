@@ -71,7 +71,7 @@
                                     (cm)
                                 </label>
                                 <div class="relative">
-                                    <input id="sizeinput" type=number step=0.01 name="foot_size_cm"
+                                    <input value="{{ auth()->user()->foot_size_cm }}" id="sizeinput" type=number step=0.01 name="foot_size_cm"
                                         class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Enter a number">
                                     <button type="submit"

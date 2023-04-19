@@ -45,7 +45,7 @@
                 <div class=" flex flex-col justify-between py-5 px-7 leading-normal">
                     <div class="selekts">
                         <select id="ident"
-                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:border-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            class="mb-2 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:border-none dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
 
                             @auth
                                 <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
@@ -62,12 +62,15 @@
                             @endforeach
 
                         </select>
+                        <div id="warning-vans" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
+                            Could not find your entered size so heres the closest -
+                        </div>
 
                     </div>
 
 
 
-                    <div class=" relative overflow-x-auto">
+                    <div class="mt-2 relative overflow-x-auto">
                         <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <tbody>
                                 <tr class="bg-white dark:bg-[#4a4a4c]">
@@ -161,7 +164,7 @@
                 <div class=" flex flex-col justify-between py-5 px-7 leading-normal">
                     <div class="selekts">
                         <select id="ident2"
-                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            class="mb-2 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
                             @auth
                                 <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
                                     {{ auth()->user()->foot_size_cm }}</option>
@@ -176,8 +179,11 @@
                                 </option>
                             @endforeach
                         </select>
+                        <div id="warning-nike" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
+                            Could not find your entered size so heres the closest -
+                        </div>
                     </div>
-                    <div class=" relative overflow-x-auto">
+                    <div class="mt-2 relative overflow-x-auto">
                         <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <tbody>
                                 <tr class="bg-white dark:bg-[#4a4a4c]">
@@ -271,7 +277,7 @@
                 <div class=" flex flex-col justify-between py-5 px-7 leading-normal">
                     <div class="selekts">
                         <select id="ident3"
-                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            class="mb-2 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
                             @auth
                                 <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
                                     {{ auth()->user()->foot_size_cm }}</option>
@@ -286,8 +292,11 @@
                                 </option>
                             @endforeach
                         </select>
+                        <div id="warning-adidas" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
+                            Could not find your entered size so heres the closest -
+                        </div>
                     </div>
-                    <div class=" relative overflow-x-auto">
+                    <div class="mt-2 relative overflow-x-auto">
                         <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <tbody>
                                 <tr class="bg-white dark:bg-[#4a4a4c]">
@@ -381,7 +390,7 @@
                 <div class=" flex flex-col justify-between py-5 px-7 leading-normal">
                     <div class="selekts">
                         <select id="ident4"
-                            class="mb-5 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
+                            class="mb-2 border-transparent focus:border-transparent focus:ring-0 dark:bg-[#323232] bg-zinc-200 border border-none text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-transparent block w-full p-2.5 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-transparent">
                             @auth
                                 <option value="{{ auth()->user()->foot_size_cm }}">Your saved size -
                                     {{ auth()->user()->foot_size_cm }}</option>
@@ -396,8 +405,12 @@
                                 </option>
                             @endforeach
                         </select>
+
+                        <div id="warning-newbalance" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
+                            Could not find your entered size so heres the closest -
+                        </div>
                     </div>
-                    <div class=" relative overflow-x-auto">
+                    <div class="mt-2 relative overflow-x-auto">
                         <table class=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <tbody>
                                 <tr class="bg-white dark:bg-[#4a4a4c]">

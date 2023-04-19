@@ -30,7 +30,11 @@ class VansController extends Controller {
             }
             $list = Vans::where('cm',$closest)->get();
         }
-        return response()->json(array('data' => $list));
+
+        return response()->json([
+            'data' => $list,
+            'closest' => $closest,
+        ]);
     }
 
     public function vans2(){
