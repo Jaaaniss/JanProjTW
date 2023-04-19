@@ -48,6 +48,7 @@ Route::post('auth/user/user_profile', [HomeController::class, 'updatePassword'])
 
 Route::get('/start_pages/size_converter',[VansController::class,'vans']);
 
+
 Route::get('/enter_size',[VansController::class,'vans2']);
 
 Route::get('/vanssize/{size}',[VansController::class,'index']);
