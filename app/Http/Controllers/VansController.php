@@ -39,13 +39,8 @@ class VansController extends Controller {
 
     public function vans2(){
 
-        $vans = vans::all();
-        $nike = nike::all();
-        $adidas = adidas::all();
-        $newbalance = newbalance::all();
-
         if (Auth::user()->foot_size_cm == null) {
-            return view('enter_size',['vans'=>$vans,'nike'=>$nike,'adidas'=>$adidas, 'newbalance'=>$newbalance]);
+            return view('enter_size');
         } else {
            return redirect("/check-size");
         }

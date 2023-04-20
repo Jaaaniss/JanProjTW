@@ -41,7 +41,7 @@
 
 </head>
 
-<body>
+<body class="dark:bg-[#323232] bg-zinc-100">
 
 
     <div id="app">
