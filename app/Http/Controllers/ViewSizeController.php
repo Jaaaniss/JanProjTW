@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB as FacadesDB;
 
-class StudViewController extends Controller {
+class ViewSizeController extends Controller {
 
    public function index() {
 

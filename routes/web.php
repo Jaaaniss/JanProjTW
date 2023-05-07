@@ -76,7 +76,7 @@ Route::middleware(['auth'])->group(function () {
 Route::POST('/enter_size',[SizeController::class,'insert']);
 
 // Ļauj piekļūt/attēlot skatā lietotāja pēdas izmēram
-Route::get('view-records','StudViewController@index');
+Route::get('view-records','ViewSizeController@index');
 
 
 
