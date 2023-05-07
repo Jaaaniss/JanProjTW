@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
 
     public function index()
@@ -14,7 +14,7 @@ class HomeController extends Controller
         $user=User::all();
         return view('/auth/user/user_profile',compact('user'));
     }
-    
+
     public function changePassword()
 
     {

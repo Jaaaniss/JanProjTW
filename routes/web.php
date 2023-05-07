@@ -6,7 +6,7 @@ use App\Http\Controllers\NikeController;
 use App\Http\Controllers\AdidasController;
 use App\Http\Controllers\DestroyController;
 use App\Http\Controllers\EditController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\NBController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\UpdateController;
@@ -42,8 +42,8 @@ Route::get('/start_pages/size_converter',[VansController::class,'vans']);
 
 
 // Lietotāja paroles mainisanai
-Route::get('auth/user/user_profile', [HomeController::class, 'changePassword'])->name('change-password');
-Route::post('auth/user/user_profile', [HomeController::class, 'updatePassword'])->name('update-password');
+Route::get('auth/user/user_profile', [UserController::class, 'changePassword'])->name('change-password');
+Route::post('auth/user/user_profile', [UserController::class, 'updatePassword'])->name('update-password');
 
 
 

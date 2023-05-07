@@ -22,6 +22,7 @@ return new class extends Migration
             $table->dateTime("created_at")->nullable();
         });
 
+        
         DB::table('newbalance')->insert(
             array(
                 ['cm' => '22',
