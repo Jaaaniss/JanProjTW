@@ -37,7 +37,9 @@ class UpdateController extends Controller {
         $item->usm = $request->input('US_M');
         $item->usw = $request->input('US_W');
         $item->update();
-        return redirect("manage_tables/manage_$company")->with('status','Sizes Updated Successfully');
+
+        return redirect("manage_tables/manage_$company")
+                ->with('status','Sizes Updated Successfully');
     }
 
 
@@ -47,7 +49,9 @@ class UpdateController extends Controller {
         $userr->name = $request->input('name');
         $userr->foot_size_cm = $request->input('foot_size_cm');
         $userr->update();
-        return redirect('manage_tables/manage_Users')->with('status','User Updated Successfully');
+
+        return redirect('manage_tables/manage_Users')
+                ->with('status','User Updated Successfully');
     }
 
     public function update_profile(Request $request)
@@ -57,6 +61,8 @@ class UpdateController extends Controller {
         $profile->email = $request->input('email');
         $profile->foot_size_cm = $request->input('foot_size_cm');
         $profile->update();
-        return redirect('auth/user/user_profile')->with('status','Profile Updated Successfully');
+
+        return redirect('auth/user/user_profile')
+                ->with('status','Profile Updated Successfully');
     }
 }

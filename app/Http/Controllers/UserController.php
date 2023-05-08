@@ -15,14 +15,13 @@ class UserController extends Controller
         return view('/auth/user/user_profile',compact('user'));
     }
 
+
     public function changePassword()
-
     {
-
         return view('/auth/user/user_profile');
-
     }
 
+    
     public function updatePassword(Request $request)
     {
         # Validation

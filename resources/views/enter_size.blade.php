@@ -61,13 +61,9 @@
                     <div>
                         <form action="/enter_size" method="post">
                             @csrf
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Foot
-                                size
-                                (cm)
-                            </label>
-                            <div class="relative">
-                                <input id="sizeinput" type=number step=0.01 name="foot_size_cm" class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a number">
-                                <button type="submit" id="submitbutton" class="h-[30px] flex items-center bg-black dark:text-black text-white absolute right-2 bottom-2 dark:bg-white dark:hover:bg-zinc-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 hover:bg-zinc-700">Enter</button>
+                            <div class="relative flex justify-center">
+                                <input id="sizeinput" type=number step=0.01 name="foot_size_cm" class="flex justify-center block w-1/4 p-3 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-transparent dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a number">
+                                <button type="submit" id="submitbutton" class="ml-3 bg-black dark:text-black text-white dark:bg-white dark:hover:bg-zinc-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-4 py-2 hover:bg-zinc-700">Enter</button>
                             </div>
                         </form>
                     </div>

@@ -31,7 +31,9 @@ class DestroyController extends Controller
         }
 
         $item->delete();
-        return redirect("manage_tables/manage_$company")->with('status', 'Size Deleted Successfully');
+
+        return redirect("manage_tables/manage_$company")
+                ->with('status', 'Size Deleted Successfully');
     }
 
 
@@ -39,13 +41,17 @@ class DestroyController extends Controller
     {
         $userr = User::find($id);
         $userr->delete();
-        return redirect('manage_tables/manage_Users')->with('status','User Deleted Successfully');
+
+        return redirect('manage_tables/manage_Users')
+                ->with('status','User Deleted Successfully');
     }
 
     public function destroy_user_from_profile()
     {
         $user = User::find(Auth::id());
         $user->delete();
-        return redirect('auth/user/self-delete-success')->with('status','Congratulations, You have deleted yourself.');
+
+        return redirect('auth/user/self-delete-success')
+                ->with('status','Congratulations, You have deleted yourself.');
     }
 }

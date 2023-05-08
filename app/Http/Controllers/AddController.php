@@ -36,13 +36,14 @@ class AddController extends Controller
                 break;
         }
 
-
         $item->cm = $request->input('CM');
         $item->eu = $request->input('EU');
         $item->uk = $request->input('UK');
         $item->usm = $request->input('US_M');
         $item->usw = $request->input('US_W');
         $item->save();
-        return redirect("manage_tables/manage_$request->company")->with('status','Size Added Successfully');
+
+        return redirect("manage_tables/manage_$request->company")
+                ->with('status','Size Added Successfully');
     }
 }

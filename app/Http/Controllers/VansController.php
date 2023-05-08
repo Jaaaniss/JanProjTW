@@ -53,7 +53,14 @@ class VansController extends Controller {
         $nike = nike::all();
         $adidas = adidas::all();
         $newbalance = newbalance::all();
-        return view('start_pages/size_converter',['vans'=>$vans,'nike'=>$nike,'adidas'=>$adidas, 'newbalance'=>$newbalance]);
+
+        return view('start_pages/size_converter',
+        [
+            'vans'=>$vans,
+            'nike'=>$nike,
+            'adidas'=>$adidas,
+            'newbalance'=>$newbalance
+        ]);
     }
 
 

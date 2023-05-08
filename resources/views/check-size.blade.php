@@ -53,7 +53,7 @@
 
                     <div class="flex align-center flex-col">
 
-                        <label class="flex justify-center block my-3 text-lg font-medium text-gray-900 dark:text-white">
+                        <label class="flex justify-center block mb-5 text-lg font-medium text-gray-900 dark:text-white">
                             Your saved foot size is {{ auth()->user()->foot_size_cm }}cm
                         </label>
 
@@ -65,17 +65,12 @@
                         <div>
                             <form action="/enter_size" method="post">
                                 @csrf
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Edit foot
-                                    size
-                                    (cm)
-                                </label>
-                                <div class="relative">
+                                <div class="relative flex justify-center">
                                     <input value="{{ auth()->user()->foot_size_cm }}" id="sizeinput" type=number step=0.01 name="foot_size_cm"
-                                        class="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                        class="block w-1/4 p-3 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-[#323232] dark:border-transparent  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                         placeholder="Enter a number">
                                     <button type="submit"
-                                        class="text-white dark:text-black absolute right-2.5 bottom-2.5 bg-black hover:bg-zinc-800 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 dark:bg-white dark:hover:bg-zinc-200">Enter</button>
+                                        class="ml-3 text-white dark:text-black bg-black hover:bg-zinc-800 focus:ring-4 focus:outline-none font-medium rounded-xl text-sm px-4 py-2 dark:bg-white dark:hover:bg-zinc-200">Enter</button>
                                 </div>
                             </form>
                         </div>
