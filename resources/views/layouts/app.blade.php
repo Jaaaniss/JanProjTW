@@ -122,6 +122,7 @@
                                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
                                                 </li>
                                             @endrole
+                                            @if (Auth::user()->email != 'Admin@Admin.Admin')
                                             <li>
                                                 <a href="/auth/user/user_profile"
                                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('My profile') }}</a>
@@ -130,6 +131,7 @@
                                                 <a href="/check-size"
                                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Edit your size') }}</a>
                                             </li>
+                                            @endif
                                             <li>
                                                 <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white"
                                                     href="{{ route('logout') }}"

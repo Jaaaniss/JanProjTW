@@ -62,7 +62,7 @@
             <div
                 class=" bg-white dark:bg-[#454547] shadow-xl rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
 
-                <div class="px-6 py-5 text-xl border-b-[1px] border-zinc-200 dark:border-zinc-500 dark:text-white">
+                <div class="px-6 py-5 text-xl border-b-[1px] border-zinc-200 dark:border-zinc-500 text-black dark:text-white">
                     <h4>Edit & Update Sizes</h4>
                 </div>
 
@@ -111,7 +111,7 @@
 
 
             </div>
-            
+
         </div>
     @endrole
 @endsection

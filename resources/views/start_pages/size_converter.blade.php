@@ -63,7 +63,7 @@
 
                         </select>
                         <div id="warning-vans" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
-                            Could not find your entered size so heres the closest -
+                            Could not find your entered size so here is the closest -
                         </div>
 
                     </div>
@@ -180,7 +180,7 @@
                             @endforeach
                         </select>
                         <div id="warning-nike" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
-                            Could not find your entered size so heres the closest -
+                            Could not find your entered size so here is the closest -
                         </div>
                     </div>
                     <div class="mt-2 relative overflow-x-auto">
@@ -293,7 +293,7 @@
                             @endforeach
                         </select>
                         <div id="warning-adidas" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
-                            Could not find your entered size so heres the closest -
+                            Could not find your entered size so here is the closest -
                         </div>
                     </div>
                     <div class="mt-2 relative overflow-x-auto">
@@ -407,7 +407,7 @@
                         </select>
 
                         <div id="warning-newbalance" class="xs:text-center sm:text-left text-sm mb-3 text-red-600 font-bold">
-                            Could not find your entered size so heres the closest -
+                            Could not find your entered size so here is the closest -
                         </div>
                     </div>
                     <div class="mt-2 relative overflow-x-auto">
