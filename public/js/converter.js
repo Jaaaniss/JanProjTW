@@ -14,11 +14,11 @@ function lengthConverter(source, valNum) {
 }
 
 
-$(document).ready(function() {
-    $('.nav-link').click(function() {
+$(document).ready(function () {
+    $('.nav-link').click(function () {
         var collapse3_content_selector = $(this).attr('href');
         var toggle_switch = $(this);
-        $(collapse3_content_selector).toggle(function() {
+        $(collapse3_content_selector).toggle(function () {
             if ($(this).css('display') == 'none') {
                 toggle_switch.html('Get converter');
             } else {
