@@ -205,15 +205,6 @@
     </div>
 
 
-    {{--
-    <x-label for="password" :value="__('Password')" />
-
-    <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
-
-    @error('password')
-        <span class="text-red-500">{{ $message }}</span>
-    @enderror --}}
-
 
 
     <script src="{{ asset('js/password.js') }}"></script>
