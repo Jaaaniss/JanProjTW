@@ -33,6 +33,7 @@
             </ol>
         </nav>
 
+        <!-- Vans -->
         <a
             class="  dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white  rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
 
@@ -152,6 +153,7 @@
             </div>
         </a>
 
+        <!-- Nike -->
         <a
             class=" dark:bg-[#4a4a4c] w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full">
 
@@ -265,6 +267,7 @@
             </div>
         </a>
 
+        <!-- Adidas -->
         <a
             class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
 
@@ -378,6 +381,7 @@
             </div>
         </a>
 
+        <!-- New Balance -->
         <a
             class=" w-full max-w-screen-md lg:max-w-screen-lg        my-5 flex flex-col align-center bg-white rounded-3xl shadow-lg dark:shadow-xl md:flex-row md:max-w-full dark:bg-[#4a4a4c]">
 
@@ -491,7 +495,6 @@
                 </div>
             </div>
         </a>
-
 
     </div>
 

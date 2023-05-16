@@ -57,11 +57,6 @@
                                 Your saved foot size is {{ auth()->user()->foot_size_cm }}cm
                             </label>
 
-                            {{-- <label for="name" class="block mb-5 text-md font-medium text-gray-900 dark:text-white">
-                                Edit your size by entering a number and clicking 'Enter' and view sizing page
-                            </label> --}}
-
-
                             <div>
                                 <form action="/enter_size" method="post">
                                     @csrf
