@@ -14,6 +14,6 @@ trait PasswordValidationRules
      */
     protected function passwordRules(): array
     {
-        return [Password::min(8)->mixedCase()];
+        return [Password::min(8)->mixedCase()->numbers()];
     }
 }

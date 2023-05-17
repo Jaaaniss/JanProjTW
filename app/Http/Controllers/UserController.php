@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\Fortify\PasswordValidationRules;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    use PasswordValidationRules;
 
     public function index()
     {
@@ -21,23 +23,21 @@ class UserController extends Controller
         return view('/auth/user/user_profile');
     }
 
-    
+
     public function updatePassword(Request $request)
     {
-        # Validation
+
         $request->validate([
             'old_password' => 'required',
-            'new_password' => 'required|confirmed',
+            'new_password' => $this->passwordRules(),
         ]);
 
-
-        #Match The Old Password
+        
         if(!Hash::check($request->old_password, auth()->user()->password)){
             return back()->with("error", "Old Password Doesn't match!");
         }
 
 
-        #Update the new Password
         User::whereId(auth()->user()->id)->update([
             'password' => Hash::make($request->new_password)
         ]);
