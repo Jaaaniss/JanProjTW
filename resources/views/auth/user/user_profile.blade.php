@@ -161,7 +161,7 @@
                         <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Confirm New Password
                         </label>
-                        <input readonly type="password" placeholder="••••••••" id="confirmNewPasswordInput"
+                        <input readonly type="password" placeholder="••••••••" id="confirm_password"
                             name="new_password_confirmation"
                             class="@error('old_password') is-invalid @enderror bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-[#323232] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-600">
 

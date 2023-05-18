@@ -28,3 +28,19 @@ $(document).ready(function () {
     });
 
 });
+
+
+// Lai users nevada 0 pie izmera saglabasanas
+function limitToNonNegative(inputElement) {
+    inputElement.addEventListener('input', function() {
+      var inputValue = parseFloat(inputElement.value);
+
+      if (isNaN(inputValue) || inputValue < 0) {
+        inputElement.value = '';
+      }
+    });
+  }
+
+  var myInput = document.getElementById('sizeinput');
+  limitToNonNegative(myInput);
+

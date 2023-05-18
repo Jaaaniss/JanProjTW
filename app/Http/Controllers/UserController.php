@@ -29,10 +29,10 @@ class UserController extends Controller
 
         $request->validate([
             'old_password' => 'required',
-            'new_password' => $this->passwordRules(),
+            'new_password' => 'required|confirmed', $this->passwordRules(),
         ]);
 
-        
+
         if(!Hash::check($request->old_password, auth()->user()->password)){
             return back()->with("error", "Old Password Doesn't match!");
         }

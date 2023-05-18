@@ -36,7 +36,6 @@
             </ol>
         </nav>
 
-
         <!-- Enter size div -->
         <div
             class="dark:bg-[#454547] bg-white dark:shadow-xl shadow-lg my-5 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto rounded-3xl">
@@ -73,6 +72,11 @@
             </div>
 
         </div>
+
     @endauth
+
+</div>
+
+    <script src="{{ asset('js/converter.js') }}"></script>
 
 @endsection
