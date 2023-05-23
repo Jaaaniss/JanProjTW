@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Nike;
 use App\Models\Adidas;
+use App\Models\Comment;
 use App\Models\NewBalance;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -53,13 +54,15 @@ class VansController extends Controller {
         $nike = nike::all();
         $adidas = adidas::all();
         $newbalance = newbalance::all();
+        $comments = Comment::all();
 
         return view('start_pages/size_converter',
         [
             'vans'=>$vans,
             'nike'=>$nike,
             'adidas'=>$adidas,
-            'newbalance'=>$newbalance
+            'newbalance'=>$newbalance,
+            'comments'=>$comments
         ]);
     }
 

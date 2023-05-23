@@ -4,6 +4,7 @@ use App\Http\Controllers\AddController;
 use App\Http\Controllers\VansController;
 use App\Http\Controllers\NikeController;
 use App\Http\Controllers\AdidasController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\DestroyController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\UserController;
@@ -119,3 +120,15 @@ Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
 
 });
 
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+
+Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
+Route::put('/comments/{comment}', 'CommentController@update')->name('comments.update');
+
+Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
+
+
+// Route::get('/comments', [VansController::class, 'vans'])->name('comments.show');
+// Route::get('/comments/{id}', 'CommentController@show')->name('comments.show');
+// Route::delete('/comments/{id}', 'CommentController@destroy')->name('comments.destroy');

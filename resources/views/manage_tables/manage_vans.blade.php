@@ -66,7 +66,7 @@
             </nav>
 
             <!-- Table div -->
-            <div class=" w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
+            <div class="shadow-xl dark:shadow-xl rounded-3xl w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
                 <div
                     class="bg-white dark:bg-[#454547] border-b-[1px] border-zinc-200 dark:border-zinc-500 rounded-t-3xl flex items-center justify-between">
                     <div class='py-3'>
@@ -104,8 +104,8 @@
                         type="button">Add size</a>
                 </div>
 
-                <div class="shadow-md relative overflow-x-auto shadow-md rounded-b-3xl">
-                    <table class="dark:bg-[#454547] bg-[#ffffff] w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <div class=" relative overflow-x-auto rounded-b-3xl">
+                    <table class=" dark:bg-[#454547] bg-[#ffffff] w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead
                             class="shadow-xl shadow-[#0000000a] dark:shadow-[#00000017] text-xs text-gray-700 uppercase dark:text-gray-400">
                             <tr>
@@ -117,7 +117,7 @@
                                 <th scope="col" class="px-9 py-3">Action</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="">
                             @foreach ($vans as $item)
                                 <tr class=" border-b dark:border-zinc-700 hover:bg-zinc-50 dark:hover:bg-[#585858]">
                                     <td class="px-9 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
