@@ -501,72 +501,98 @@
         </a>
 
         @auth
-        <!-- Comment input section -->
-        <div class="my-[150px] w-full max-w-screen-md lg:max-w-screen-lg">
+            <!-- Comment input section -->
+            <div class="my-[150px] w-full max-w-screen-md lg:max-w-screen-lg">
 
-            <label for="message"
-                class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">Let us know if there
-                is any issues or areas for improvement.</label>
-            <form class="dark:shadow-xl shadow-lg rounded-3xl" action="{{ route('comments.store') }}" method="POST">
-                @csrf
+                <label for="message"
+                    class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">Let us know if there
+                    is any issues or areas for improvement.</label>
+                <form class="dark:shadow-xl shadow-lg rounded-3xl" action="{{ route('comments.store') }}" method="POST">
+                    @csrf
 
-                <div
-                    class="rounded-3xl w-full mb-4 border border-zinc-200 bg-gray-50 dark:bg-[#454547] dark:border-zinc-600">
-                    <div class="px-4 py-2 bg-white rounded-t-3xl dark:bg-[#4a4a4c]">
-                        <label for="comment" class="sr-only">Your comment</label>
-                        <textarea name="content" id="content" rows="4"
-                            class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-[#4a4a4c] focus:ring-0 dark:text-white dark:placeholder-gray-400"
-                            placeholder="Write a comment..." required></textarea>
+                    <div
+                        class="rounded-3xl w-full mb-4 border border-zinc-200 bg-gray-50 dark:bg-[#454547] dark:border-zinc-600">
+                        <div class="px-4 py-2 bg-white rounded-t-3xl dark:bg-[#4a4a4c]">
+                            <label for="comment" class="sr-only">Your comment</label>
+                            <textarea name="content" id="content" rows="4"
+                                class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-[#4a4a4c] focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                                placeholder="Write a comment..." required></textarea>
+                        </div>
+                        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-zinc-600">
+                            <button type="submit"
+                                class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center dark:text-black text-white bg-black dark:bg-white rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                                Post comment
+                            </button>
+                        </div>
                     </div>
-                    <div class="flex items-center justify-between px-3 py-2 border-t dark:border-zinc-600">
-                        <button type="submit"
-                            class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center dark:text-black text-white bg-black dark:bg-white rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
-                            Post comment
-                        </button>
+                </form>
+            </div>
+
+
+            <!-- User Comments -->
+            <label for="message" class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All
+                comments</label>
+            @foreach ($comments as $comment)
+                <article id="commentContainer{{ $comment->id }}"
+                    class="w-full max-w-screen-md lg:max-w-screen-lg p-6 mb-6 text-base bg-white dark:shadow-xl shadow-lg rounded-3xl dark:bg-[#4a4a4c]">
+                    <footer class="flex justify-between items-center mb-2">
+                        <div class="flex">
+                            <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
+                                    class="dark:invert mr-2 w-6 h-6 rounded-full" src="{{ asset('/image/profile.png') }}"
+                                    alt="Michael Gough">{{ $comment->name }}</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
+                                    title="February 8th, 2022">{{ $comment->created_at }}</time>
+                            </p>
+                        </div>
+
+                        @if (auth()->check() && ($comment->user_id === auth()->user()->id || auth()->user()->email === 'Admin@Admin.Admin'))
+                            <div class="flex">
+
+                                <button type="button"
+                                    onclick="showEditForm('{{ $comment->id }}', '{{ $comment->content }}')"
+                                    class="mr-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-blue-600 dark:hover:bg-blue-600"><svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                        <path
+                                            d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
+                                        </path>
+                                    </svg>
+                                </button>
+
+                                <form action="{{ route('comments.destroy', ['id' => $comment->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                        class="ml-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-red-600 dark:hover:bg-red-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                        @endif
+
+                    </footer>
+                    <div id="commentContent{{ $comment->id }}" class="break-words text-gray-500 dark:text-gray-400">
+                        {{ $comment->content }}</div>
+                    <div id="editComment{{ $comment->id }}" class="hidden">
+                        <textarea id="commentTextArea{{ $comment->id }}"
+                            class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none resize-none focus:shadow-outline"
+                            rows="4">{{ $comment->content }}</textarea>
+                        <div class="mt-2">
+                            <button type="button" onclick="updateComment('{{ $comment->id }}', '{{ $comment->content }}')"
+                                class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                Save
+                            </button>
+                            <button type="button" onclick="cancelEdit('{{ $comment->id }}', '{{ $comment->content }}')"
+                                class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-300 rounded-lg hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
+                                Cancel
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>
+                </article>
+            @endforeach
 
-
-        <!-- User Comments -->
-        <label for="message" class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All comments</label>
-        @foreach ($comments as $comment)
-
-        <article class="w-full max-w-screen-md lg:max-w-screen-lg p-6 mb-6 text-base bg-white dark:shadow-xl shadow-lg rounded-3xl dark:bg-[#4a4a4c]">
-            <footer class="flex justify-between items-center mb-2">
-                <div class="flex">
-                    <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                            class="dark:invert mr-2 w-6 h-6 rounded-full"
-                            src="{{ asset('/image/profile.png') }}"
-                            alt="Michael Gough">{{ $comment->name }}</p>
-                    <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
-                            title="February 8th, 2022">{{ $comment->created_at }}</time></p>
-                </div>
-
-                @if (auth()->check() && ($comment->user_id === auth()->user()->id || auth()->user()->email === 'Admin@Admin.Admin'))
-
-                <div class="flex">
-                    <button type="submit" class="mr-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-blue-600 dark:hover:bg-blue-600">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
-                    </button>
-
-                    <form action="{{ route('comments.destroy', ['id' => $comment->id]) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="ml-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-red-600 dark:hover:bg-red-600">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-                @endif
-
-            </footer>
-            <p class="break-words text-gray-500 dark:text-gray-400">{{ $comment->content }}</p>
-        </article>
-        @endforeach
 
         @endauth
     </div>
