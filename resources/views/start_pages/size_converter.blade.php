@@ -576,11 +576,11 @@
                     <div id="commentContent{{ $comment->id }}" class="break-words text-gray-500 dark:text-gray-400">
                         {{ $comment->content }}</div>
                     <div id="editComment{{ $comment->id }}" class="hidden">
-                        <textarea id="commentTextArea{{ $comment->id }}"
-                            class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none resize-none focus:shadow-outline"
+                        <textarea id="commentTextArea{{ $comment->id }}" name="content"
+                            class="dark:bg-[#454547] dark:text-white w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none resize-none focus:shadow-outline"
                             rows="4">{{ $comment->content }}</textarea>
                         <div class="mt-2">
-                            <button type="button" onclick="updateComment('{{ $comment->id }}', '{{ $comment->content }}')"
+                            <button type="button"
                                 class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                                 Save
                             </button>

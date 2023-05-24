@@ -69,6 +69,9 @@ Route::middleware(['auth'])->group(function () {
     // Lietotājs izdzēš savu commentaru
     Route::delete('/comments/{id}', [DestroyController::class, 'destroy_comment'])->name('comments.destroy');
 
+    // Lietotājs atjauno savu commentaru
+    // Route::post('/comments/update', [CommentController::class, 'update'])->name('comments.update');
+    // Route::put('update_comment/{id}', [UpdateController::class, 'update_comment']);
 
     // Lietotājs atjauno savus datus datubāzē
     Route::put('update_user/{id}', [UpdateController::class, 'update_profile']);
