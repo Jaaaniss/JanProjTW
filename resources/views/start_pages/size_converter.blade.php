@@ -532,47 +532,36 @@
         <!-- User Comments -->
         <label for="message" class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All comments</label>
         @foreach ($comments as $comment)
+
         <article class="w-full max-w-screen-md lg:max-w-screen-lg p-6 mb-6 text-base bg-white dark:shadow-xl shadow-lg rounded-3xl dark:bg-[#4a4a4c]">
             <footer class="flex justify-between items-center mb-2">
-                <div class="flex items-center">
+                <div class="flex">
                     <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
                             class="dark:invert mr-2 w-6 h-6 rounded-full"
                             src="{{ asset('/image/profile.png') }}"
-                            alt="Michael Gough">{{ $comment->user->name }}</p>
+                            alt="Michael Gough">{{ $comment->name }}</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
-                            title="February 8th, 2022">Feb. 8, 2022</time></p>
+                            title="February 8th, 2022">{{ $comment->created_at }}</time></p>
                 </div>
-                @if(auth()->check() && $comment->user_id === auth()->user()->id)
-                    <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
-                        class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-[#4a4a4c] dark:hover:bg-[#454547] dark:focus:ring-[#454547]"
-                        type="button">
-                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z">
-                            </path>
-                        </svg>
-                        <span class="sr-only">Comment settings</span>
+
+                @if (auth()->check() && ($comment->user_id === auth()->user()->id || auth()->user()->email === 'Admin@Admin.Admin'))
+
+                <div class="flex">
+                    <button type="submit" class="mr-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-blue-600 dark:hover:bg-blue-600">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path></svg>
                     </button>
-                @endif
-                <!-- Dropdown menu -->
 
-                <div id="dropdownComment1"
-                    class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-[#454547] dark:divide-gray-600">
-                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200"
-                        aria-labelledby="dropdownMenuIconHorizontalButton">
-
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-[#4a4a4c] dark:hover:text-white">Edit</a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-[#4a4a4c] dark:hover:text-white">Remove</a>
-                        </li>
-
-                    </ul>
+                    <form action="{{ route('comments.destroy', ['id' => $comment->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="ml-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-red-600 dark:hover:bg-red-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
+                @endif
 
             </footer>
             <p class="break-words text-gray-500 dark:text-gray-400">{{ $comment->content }}</p>

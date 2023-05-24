@@ -18,7 +18,7 @@ class CommentController extends Controller
         return redirect()->back()->with('success', 'Comment added successfully.');
     }
 
-    
+
 
     // public function showComments()
     // {
@@ -33,12 +33,6 @@ class CommentController extends Controller
     //     return view('comments.show', compact('comment'));
     // }
 
-    // public function destroy($id)
-    // {
-    //     $comment = Comment::findOrFail($id);
-    //     $comment->delete();
 
-    //     return redirect()->back()->with('success', 'Comment deleted successfully.');
-    // }
 
 }

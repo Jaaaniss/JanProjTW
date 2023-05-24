@@ -11,6 +11,7 @@ use App\Models\Comment;
 use App\Models\NewBalance;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\Auth;
 
 class VansController extends Controller {
@@ -54,8 +55,10 @@ class VansController extends Controller {
         $nike = nike::all();
         $adidas = adidas::all();
         $newbalance = newbalance::all();
-        $comments = Comment::all();
-
+        $comments = DB::table("comments")->selectRaw("comments.id as id,user_id,users.name as name,content,left(comments.created_at,10) as created_at")
+        ->join('users',"users.id",'=','comments.user_id')
+        ->get();
+        // return dd($comments);
         return view('start_pages/size_converter',
         [
             'vans'=>$vans,

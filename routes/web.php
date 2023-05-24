@@ -66,6 +66,10 @@ Route::middleware(['auth'])->group(function () {
     // Lietotājs izdzēš sevi no datubāzes
     Route::delete('self-delete', [DestroyController::class, 'destroy_user_from_profile']);
 
+    // Lietotājs izdzēš savu commentaru
+    Route::delete('/comments/{id}', [DestroyController::class, 'destroy_comment'])->name('comments.destroy');
+
+
     // Lietotājs atjauno savus datus datubāzē
     Route::put('update_user/{id}', [UpdateController::class, 'update_profile']);
 
@@ -123,10 +127,10 @@ Route::middleware(['auth','role:Admin'])->name('admin.')->group(function () {
 
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
-Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
-Route::put('/comments/{comment}', 'CommentController@update')->name('comments.update');
+// Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
+// Route::put('/comments/{comment}', 'CommentController@update')->name('comments.update');
 
-Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
+// Route::get('/comments/{comment}/edit', 'CommentController@edit')->name('comments.edit');
 
 
 // Route::get('/comments', [VansController::class, 'vans'])->name('comments.show');

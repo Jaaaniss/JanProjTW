@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adidas;
+use App\Models\Comment;
 use App\Models\NewBalance;
 use App\Models\Nike;
 use App\Models\User;
@@ -53,5 +54,13 @@ class DestroyController extends Controller
 
         return redirect('auth/user/self-delete-success')
                 ->with('status','Congratulations, You have deleted yourself.');
+    }
+
+    public function destroy_comment($id)
+    {
+        $comment = Comment::find($id);
+        $comment->delete();
+
+        return redirect()->back()->with('success', 'Comment deleted successfully.');
     }
 }
