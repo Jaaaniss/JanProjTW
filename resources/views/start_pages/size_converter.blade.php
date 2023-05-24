@@ -502,7 +502,7 @@
 
         @auth
             <!-- Comment input section -->
-            <div class="my-[150px] w-full max-w-screen-md lg:max-w-screen-lg">
+            <div class="mt-[150px] w-full max-w-screen-md lg:max-w-screen-lg">
 
                 <label for="message"
                     class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">Let us know if there
@@ -527,10 +527,14 @@
                     </div>
                 </form>
             </div>
+        @endauth
 
 
             <!-- User Comments -->
-            <label for="message" class="mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All
+            @if ($comments->isEmpty())
+            <label for="message" class="my-[50px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">No comments yet :(</label>
+            @else
+            <label for="message" class="my-[150px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All
                 comments</label>
             @foreach ($comments as $comment)
                 <article id="commentContainer{{ $comment->id }}"
@@ -550,7 +554,8 @@
 
                                 <button type="button"
                                     onclick="showEditForm('{{ $comment->id }}', '{{ $comment->content }}')"
-                                    class="mr-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-blue-600 dark:hover:bg-blue-600"><svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                    class="mr-1 inline-flex items-center justify-center w-8 h-8 text-pink-100 transition-colors duration-150 dark:bg-zinc-500 bg-black rounded-lg focus:shadow-outline hover:bg-blue-600 dark:hover:bg-blue-600"><svg
+                                        class="w-4 h-4 fill-current" viewBox="0 0 20 20">
                                         <path
                                             d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z">
                                         </path>
@@ -573,28 +578,34 @@
                         @endif
 
                     </footer>
-                    <div id="commentContent{{ $comment->id }}" class="break-words text-gray-500 dark:text-gray-400">
-                        {{ $comment->content }}</div>
-                    <div id="editComment{{ $comment->id }}" class="hidden">
-                        <textarea id="commentTextArea{{ $comment->id }}" name="content"
-                            class="dark:bg-[#454547] dark:text-white w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none resize-none focus:shadow-outline"
-                            rows="4">{{ $comment->content }}</textarea>
-                        <div class="mt-2">
-                            <button type="button"
-                                class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                                Save
-                            </button>
-                            <button type="button" onclick="cancelEdit('{{ $comment->id }}', '{{ $comment->content }}')"
-                                class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-300 rounded-lg hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
-                                Cancel
-                            </button>
+                    <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="{{ route('comments.update', ['id' => $comment->id]) }}"
+                        id="myForm" method="POST">
+                        @csrf
+                        @method('PUT')
+                        <div id="commentContent{{ $comment->id }}" class="break-words text-gray-500 dark:text-gray-400">
+                            {{ $comment->content }}</div>
+                        <div id="editComment{{ $comment->id }}" class="hidden">
+                            <textarea id="commentTextArea{{ $comment->id }}" name="content"
+                                class="dark:bg-[#454547] dark:text-white w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none resize-none focus:shadow-outline"
+                                rows="4">{{ $comment->content }}</textarea>
+                            <div class="mt-2">
+                                <button type="submit" id="saveCommentButton{{ $comment->id }}"
+                                    class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                                    Save
+                                </button>
+                                <button type="button"
+                                    onclick="cancelEdit('{{ $comment->id }}', '{{ $comment->content }}')"
+                                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-300 rounded-lg hover:bg-gray-400 focus:outline-none focus:bg-gray-400">
+                                    Cancel
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </article>
             @endforeach
+            @endif
 
 
-        @endauth
     </div>
 
     <script src="{{ asset('js/ajax.js') }}"></script>

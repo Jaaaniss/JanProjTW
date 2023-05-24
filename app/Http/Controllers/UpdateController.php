@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Adidas;
+use App\Models\Comment;
 use App\Models\NewBalance;
 use App\Models\Nike;
 use App\Models\User;
@@ -64,5 +65,15 @@ class UpdateController extends Controller {
 
         return redirect('auth/user/user_profile')
                 ->with('status','Profile Updated Successfully');
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        $comments = Comment::find($id);
+        $comments->content = $request->input('content');
+        $comments->update();
+
+        return redirect()->back()->with('success', 'Comment added successfully.');
     }
 }

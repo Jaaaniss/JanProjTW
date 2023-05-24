@@ -17,22 +17,4 @@ class CommentController extends Controller
 
         return redirect()->back()->with('success', 'Comment added successfully.');
     }
-
-
-
-    // public function showComments()
-    // {
-    //     $comments = Comment::all();
-    //     return view('start_pages/size_converter', compact('comments'));
-    // }
-
-    // public function show($id)
-    // {
-    //     $comment = Comment::findOrFail($id);
-
-    //     return view('comments.show', compact('comment'));
-    // }
-
-
-
 }
