@@ -9,3 +9,12 @@ function cancelEdit(commentId, content) {
     document.getElementById('editComment' + commentId).style.display = 'none';
     document.getElementById('commentTextArea' + commentId).value = content;
 }
+
+
+setTimeout(function() {
+    var alert = document.getElementById('alert');
+    alert.style.opacity = '0';
+    setTimeout(function() {
+        alert.style.display = 'none';
+    }, 10);
+}, 2000);

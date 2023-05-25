@@ -9,7 +9,7 @@
             <!-- Alerti -->
             <div class=" mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
                 @if (session('status'))
-                    <div class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
+                    <div id="alert "class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
                         role="alert">
 
                         <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"

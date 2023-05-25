@@ -20,7 +20,7 @@
                 </div>
             </div>
         @elseif (session('error'))
-            <div class="mb-2 flex p-4 text-xl text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#454547] dark:text-red-400 dark:border-red-800"
+            <div id="alert "class="mb-2 flex p-4 text-xl text-red-800 border border-red-300 rounded-2xl bg-red-50 dark:bg-[#454547] dark:text-red-400 dark:border-red-800"
                 role="alert">
                 <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg">

@@ -74,6 +74,6 @@ class UpdateController extends Controller {
         $comments->content = $request->input('content');
         $comments->update();
 
-        return redirect()->back()->with('success', 'Comment added successfully.');
+        return redirect()->back()->with('success', 'Comment updated successfully.');
     }
 }
