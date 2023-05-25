@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\Vans;
 use App\Http\Requests;
@@ -14,12 +15,13 @@ use Illuminate\Http\Request;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\Auth;
 
-class VansController extends Controller {
+class VansController extends Controller
+{
 
     public function index($size)
     {
 
-        $list = Vans::where('cm',$size)->get();
+        $list = Vans::where('cm', $size)->get();
         $closest = null;
         $using_closest = false;
 
@@ -30,7 +32,7 @@ class VansController extends Controller {
                     $closest = $item;
                 }
             }
-            $list = Vans::where('cm',$closest)->get();
+            $list = Vans::where('cm', $closest)->get();
         }
 
         return response()->json([
@@ -39,12 +41,13 @@ class VansController extends Controller {
         ]);
     }
 
-    public function vans2(){
+    public function vans2()
+    {
 
         if (Auth::user()->foot_size_cm == null) {
             return view('enter_size');
         } else {
-           return redirect("/check-size");
+            return redirect("/check-size");
         }
     }
 
@@ -55,55 +58,56 @@ class VansController extends Controller {
         $nike = nike::all();
         $adidas = adidas::all();
         $newbalance = newbalance::all();
-        $comments = DB::table("comments")
-        ->selectRaw("comments.id as id,user_id,users.name as name,content,left(comments.created_at,10) as created_at, comments.created_at as sorting")
-        ->join('users',"users.id",'=','comments.user_id')
-        ->orderByDesc("sorting")
-        ->get();
+        $comments = Comment::selectRaw("comments.id as id, user_id, users.name as name, content,
+        left(comments.created_at, 10) as created_at, comments.created_at as sorting")
+            ->join('users', 'users.id', '=', 'comments.user_id')
+            ->orderByDesc("sorting")
+            ->paginate(10);
 
-        return view('start_pages/size_converter',
-        [
-            'vans'=>$vans,
-            'nike'=>$nike,
-            'adidas'=>$adidas,
-            'newbalance'=>$newbalance,
-            'comments'=>$comments
-        ]);
+        return view(
+            'start_pages/size_converter',
+            [
+                'vans' => $vans,
+                'nike' => $nike,
+                'adidas' => $adidas,
+                'newbalance' => $newbalance,
+                'comments' => $comments
+            ]
+        );
     }
 
 
     public function vans3()
     {
         $vans = vans::all();
-        return view('manage_tables/manage_Vans',['vans'=>$vans]);
+        return view('manage_tables/manage_Vans', ['vans' => $vans]);
     }
 
 
     public function nike3()
     {
         $nike = nike::all();
-        return view('manage_tables/manage_Nike',['nike'=>$nike]);
+        return view('manage_tables/manage_Nike', ['nike' => $nike]);
     }
 
 
     public function adidas3()
     {
         $adidas = adidas::all();
-        return view('manage_tables/manage_Adidas',['adidas'=>$adidas]);
+        return view('manage_tables/manage_Adidas', ['adidas' => $adidas]);
     }
 
 
     public function newbalance3()
     {
         $newbalance = NewBalance::all();
-        return view('manage_tables/manage_NewBalance',['newbalance'=>$newbalance]);
+        return view('manage_tables/manage_NewBalance', ['newbalance' => $newbalance]);
     }
 
 
     public function users3()
     {
         $userr = User::all();
-        return view('manage_tables/manage_Users',['userr'=>$userr]);
+        return view('manage_tables/manage_Users', ['userr' => $userr]);
     }
-
 }

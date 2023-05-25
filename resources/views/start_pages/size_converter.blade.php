@@ -5,7 +5,8 @@
         <!-- Alerti -->
         <div class=" mb-2 w-full max-w-screen-md lg:max-w-screen-lg relative overflow-x-auto">
             @if (session('success'))
-                <div id="alert" class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
+                <div id="alert"
+                    class="mb-2 flex p-4 text-sm text-green-800 border border-green-300 rounded-2xl bg-green-50 dark:bg-[#454547] dark:text-green-400 dark:border-green-800"
                     role="alert">
 
                     <svg aria-hidden="true" class="flex-shrink-0 inline w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20"
@@ -548,11 +549,14 @@
         @endauth
 
 
-            <!-- User Comments -->
-            @if ($comments->isEmpty())
-            <label for="message" class="my-[50px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">No comments yet :(</label>
-            @else
-            <label for="message" class="my-[150px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All
+        <!-- User Comments -->
+        @if ($comments->isEmpty())
+            <label for="message"
+                class="my-[50px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">No comments
+                yet :(</label>
+        @else
+            <label for="message"
+                class="my-[150px] mb-5 text-center block mb-2 text-lg font-medium text-gray-900 dark:text-white">All
                 comments</label>
             @foreach ($comments as $comment)
                 <article id="commentContainer{{ $comment->id }}"
@@ -596,8 +600,8 @@
                         @endif
 
                     </footer>
-                    <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="{{ route('comments.update', ['id' => $comment->id]) }}"
-                        id="myForm" method="POST">
+                    <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5"
+                        action="{{ route('comments.update', ['id' => $comment->id]) }}" id="myForm" method="POST">
                         @csrf
                         @method('PUT')
                         <div id="commentContent{{ $comment->id }}" class="break-words text-gray-500 dark:text-gray-400">
@@ -621,7 +625,11 @@
                     </form>
                 </article>
             @endforeach
-            @endif
+        @endif
+
+
+        
+        {{ $comments->links() }}
 
 
     </div>
