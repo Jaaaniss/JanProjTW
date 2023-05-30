@@ -41,7 +41,7 @@
 
 </head>
 
-<body class="dark:bg-[#323232] bg-zinc-100">
+<body class="dark:bg-[#323232] bg-[#eeeeee]">
 
 
     <div id="app">
@@ -121,6 +121,14 @@
                                                     <a href="/manage_tables/manage_Vans"
                                                         class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage sizes') }}</a>
                                                 </li>
+                                                <li>
+                                                    <a href="/auth/user/user_profile"
+                                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage "My profile"') }}</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/check-size"
+                                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-zinc-300 dark:hover:bg-[#575757] dark:text-zinc-200 dark:hover:text-white">{{ __('Manage "Edit your size"') }}</a>
+                                                </li>
                                             @endrole
                                             @if (Auth::user()->email != 'Admin@Admin.Admin')
                                             <li>
@@ -154,7 +162,7 @@
 
     </div>
 
-    <main class="dark:bg-[#323232] bg-zinc-100 blade" class="py-4">
+    <main class="dark:bg-[#323232] bg-[#eeeeee] blade" class="py-4">
         @yield('content')
     </main>
 

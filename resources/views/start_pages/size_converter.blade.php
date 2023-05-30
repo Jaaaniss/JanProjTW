@@ -563,11 +563,11 @@
                     class="w-full max-w-screen-md lg:max-w-screen-lg p-6 mb-6 text-base bg-white dark:shadow-xl shadow-lg rounded-3xl dark:bg-[#4a4a4c]">
                     <footer class="flex justify-between items-center mb-2">
                         <div class="flex">
-                            <p class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white"><img
-                                    class="dark:invert mr-2 w-6 h-6 rounded-full" src="{{ asset('/image/profile.png') }}"
+                            <p class="inline-flex items-center mr-6 text-sm text-gray-900 dark:text-white"><img
+                                    class="dark:invert mr-3 w-6 h-6 rounded-full" src="{{ asset('/image/profile.png') }}"
                                     alt="Michael Gough">{{ $comment->name }}</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
-                                    title="February 8th, 2022">{{ $comment->created_at }}</time>
+                            <p class="text-sm text-gray-600 dark:text-gray-400"><time class=" align-middle" pubdate
+                                    datetime="2022-02-08" title="February 8th, 2022">{{ $comment->created_at }}</time>
                             </p>
                         </div>
 
@@ -628,7 +628,7 @@
         @endif
 
 
-        
+
         {{ $comments->links() }}
 
 

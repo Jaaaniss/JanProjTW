@@ -144,5 +144,7 @@
         </div>
     @endrole
 
+    <script src="{{ asset('js/comment-edit.js') }}"></script>
+
 
 @endsection

@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <section class="pt-[236px] pb-[236px] text-gray-600 body-font">
+    <section class="pt-[220px] text-gray-600 body-font">
         <div class="px-5">
             <div class="text-center mb-[90px]">
                 <div class="dark:invert flex justify-center">

@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="mx-5 pt-[200px] pb-[548px] flex flex-col items-center ">
+<div class="mx-5 pt-[200px] flex flex-col items-center ">
 
 
     @auth

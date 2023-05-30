@@ -58,9 +58,9 @@ class VansController extends Controller
         $nike = nike::all();
         $adidas = adidas::all();
         $newbalance = newbalance::all();
-        $comments = Comment::selectRaw("comments.id as id, user_id, users.name as name, content,
-        left(comments.created_at, 10) as created_at, comments.created_at as sorting")
-            ->join('users', 'users.id', '=', 'comments.user_id')
+        $comments = DB::table("comments")
+            ->selectRaw("comments.id as id,user_id,users.name as name,content,left(comments.created_at,10) as created_at, comments.created_at as sorting")
+            ->join('users',"users.id",'=','comments.user_id')
             ->orderByDesc("sorting")
             ->paginate(10);
 
